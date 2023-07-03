@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session
+from werkzeug.security import generate_password_hash, check_password_hash
 import csv
 import os
 
@@ -13,6 +14,7 @@ def load_file(file_path):
             data_list.append(data)
     return data_list
 
+# Pagination
 PER_PAGE = 10
 
 def get_total_pages(data):
@@ -26,8 +28,6 @@ def get_start_index(page):
 def get_end_index(start_index):
     end_index = start_index + PER_PAGE
     return end_index
-
-# TODO: age_group 함수 만들기
 
 @app.route('/')
 def index():
@@ -49,7 +49,7 @@ def login():
             if id_ == member["Id"]:
                 print(id_, member["Id"])
                 stored_password = member["Password"]
-                if password == stored_password:
+                if check_password_hash(stored_password, password):
                     session['id'] = id_
                     return redirect(url_for('users'))
                 else:
@@ -79,13 +79,12 @@ def signup():
         elif password1 != password2:
             error = '비밀번호가 일치하지 않습니다.'
         else:
-            new_member = {"Id": sign_id, "Password": password1}
+            new_member = {"Id": sign_id, "Password": generate_password_hash(password1)}
             with open("src/member.csv", "a", encoding="utf-8", newline="") as file:
                 fieldnames = ["Id", "Password"]
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writerow(new_member)
             return redirect(url_for('login'))
-        flash(error)
     return render_template("auth/signup.html", error = error)
 
 @app.route('/users')
