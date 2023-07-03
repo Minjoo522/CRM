@@ -1,4 +1,16 @@
 {% extends 'layout.html' %} {% block content %}
+<form method="get">
+  <div>
+    <label for="type">Type:</label>
+    <select name="type">
+      <option selected value=""></option>
+      {% for type in item_type %}
+      <option value="{{ type }}">{{ type }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <input class="submit" type="submit" value="Submit" />
+</form>
 <!-- Stores Table -->
 <table>
   <tr>

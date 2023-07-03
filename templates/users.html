@@ -1,9 +1,9 @@
 {% extends 'layout.html' %} {% block content %}
 <!-- Form -->
-<form action="/users" method="get" class="user-form">
+<form method="get" class="user-form">
   <div class="user-form__name">
     <label for="name">Name:</label>
-    <input type="text" name="name" />
+    <input type="text" name="name" value="{{ search_name }}" />
   </div>
   <div class="user-form__gender">
     <label for="gender">Gender:</label>

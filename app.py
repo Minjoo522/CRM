@@ -110,7 +110,7 @@ def users():
     start_index = get_start_index(page)
     end_index = get_end_index(start_index)
     page_data = data[start_index:end_index]
-    return render_template("users.html", users = page_data, total_pages = total_pages, current_page = page, keywords = keywords)
+    return render_template("users.html", users = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_name=search_name)
 
 @app.route('/user_detail/<selected_id>')
 def user_detail(selected_id):
@@ -122,19 +122,24 @@ def user_detail(selected_id):
 @app.route('/stores')
 def stores():
     page = request.args.get('page', default=1, type=int)
+    search_store_name = request.args.get('store-name', default="", type=str)
     stores = load_file("src/store.csv")
 
     data = []
     page_data = []
 
     for store in stores:
-        data.append(store)
+        if search_store_name in store['Name']:
+            data.append(store)
+
+    keywords = ""
+    keywords += "&store-name=" + search_store_name
 
     total_pages = get_total_pages(data)
     start_index = get_start_index(page)
     end_index = get_end_index(start_index)
     page_data = data[start_index:end_index]
-    return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page)
+    return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_store_name = search_store_name)
 
 @app.route('/store_detail/<selected_id>')
 def store_detail(selected_id):
@@ -146,19 +151,27 @@ def store_detail(selected_id):
 @app.route('/items')
 def items():
     page = request.args.get('page', default=1, type=int)
+    search_type = request.args.get('type', default="", type=str)
     items = load_file("src/item.csv")
 
     data = []
     page_data = []
+
+    # 아이템 타입 분류
+    item_type = { item['Type'] for item in items }
     
     for item in items:
-        data.append(item)
+        if search_type in item['Type']:
+            data.append(item)
+
+    keywords = ""
+    keywords += "&type=" + search_type
 
     total_pages = get_total_pages(data)
     start_index = get_start_index(page)
     end_index = get_end_index(start_index)
     page_data = data[start_index:end_index]
-    return render_template("items.html", items = page_data, total_pages = total_pages, current_page = page)
+    return render_template("items.html", items = page_data, total_pages = total_pages, current_page = page, item_type = item_type, keywords=keywords)
     
 @app.route('/item_detail/<selected_id>')
 def item_detail(selected_id):
