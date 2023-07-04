@@ -49,6 +49,10 @@ button:hover {
   cursor: pointer;
 }
 
+input {
+  border: none;
+}
+
 /* common */
 .max-container {
   width: 75%;
