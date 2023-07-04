@@ -43,6 +43,10 @@
   border-radius: 5px;
 }
 
+.login__label:hover {
+  cursor: text;
+}
+
 .login__label {
   position: absolute;
   top: 25%;
@@ -55,6 +59,10 @@
 .login__label.selected {
   font-size: 0.8rem;
   transform: translateY(-8px);
+}
+
+.login__label.hidden {
+  opacity: 0;
 }
 
 .login__button,

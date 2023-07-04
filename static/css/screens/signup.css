@@ -22,7 +22,7 @@
 .signup__input {
   width: 300px;
   height: 40px;
-  background-color: var(--color-primary-variant);
+  background-color: var(--color-primary);
   opacity: 0.5;
   border-radius: 5px;
 }
