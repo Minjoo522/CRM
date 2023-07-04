@@ -1,35 +1,38 @@
-{% extends 'layout.html' %} {% block content %}
-<form method="get">
-  <div>
-    <label for="type">Type:</label>
-    <select name="type">
-      <option selected value=""></option>
-      {% for type in item_type %}
-      <option value="{{ type }}">{{ type }}</option>
-      {% endfor %}
-    </select>
-  </div>
-  <input class="submit" type="submit" value="Submit" />
-</form>
-<!-- Stores Table -->
-<table>
-  <tr>
-    <th align="left">id</th>
-    <th>type</th>
-    <th>name</th>
-    <th>unit_price</th>
-  </tr>
-  {% for item in items %}
-  <tr class="table__item hover">
-    <td>
-      <a class="table__item id" href="item_detail/{{item['Id']}}"
-        >{{ item['Id'] }}
-      </a>
-    </td>
-    <td align="center">{{ item['Type'] }}</td>
-    <td align="center">{{ item['Name'] }}</td>
-    <td align="center">{{ item['UnitPrice'] }}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% include "components/pagination.html" %} {% endblock %}
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main>
+  <form method="get">
+    <div>
+      <label for="type">Type:</label>
+      <select name="type">
+        <option selected value=""></option>
+        {% for type in item_type %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <input class="submit" type="submit" value="Submit" />
+  </form>
+  <!-- Stores Table -->
+  <table>
+    <tr>
+      <th align="left">id</th>
+      <th>type</th>
+      <th>name</th>
+      <th>unit_price</th>
+    </tr>
+    {% for item in items %}
+    <tr class="table__item hover">
+      <td>
+        <a class="table__item id" href="item_detail/{{item['Id']}}"
+          >{{ item['Id'] }}
+        </a>
+      </td>
+      <td align="center">{{ item['Type'] }}</td>
+      <td align="center">{{ item['Name'] }}</td>
+      <td align="center">{{ item['UnitPrice'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% include "components/pagination.html" %}
+</main>
+{% endblock %}

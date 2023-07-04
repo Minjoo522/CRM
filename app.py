@@ -205,4 +205,4 @@ def order_items():
     return render_template("order_items.html", order_items = page_data, total_pages = total_pages, current_page = page)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port="8080")
+    app.run(host="0.0.0.0", debug=True, port="8001")

@@ -1,28 +1,31 @@
-{% extends 'layout.html' %} {% block content %}
-<!-- Stores Search Form -->
-<form method="get">
-  <div>
-    <label for="store-name">Store:</label>
-    <input type="text" name="store-name" value="{{ search_store_name }}" />
-  </div>
-  <input class="submit" type="submit" value="Submit" />
-</form>
-<!-- Stores Table -->
-<table>
-  <tr>
-    <th>type</th>
-    <th>name</th>
-    <th>addreess</th>
-  </tr>
-  {% for store in stores %}
-  <tr
-    class="table__item hover"
-    onclick="location.href='/store_detail/{{ store.Id }}'"
-  >
-    <td align="center">{{ store['Name'] }}</td>
-    <td align="center">{{ store['Type'] }}</td>
-    <td align="center">{{ store['Address'] }}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% include "components/pagination.html" %} {% endblock %}
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main>
+  <!-- Stores Search Form -->
+  <form method="get">
+    <div>
+      <label for="store-name">Store:</label>
+      <input type="text" name="store-name" value="{{ search_store_name }}" />
+    </div>
+    <input class="submit" type="submit" value="Submit" />
+  </form>
+  <!-- Stores Table -->
+  <table>
+    <tr>
+      <th>type</th>
+      <th>name</th>
+      <th>addreess</th>
+    </tr>
+    {% for store in stores %}
+    <tr
+      class="table__item hover"
+      onclick="location.href='/store_detail/{{ store.Id }}'"
+    >
+      <td align="center">{{ store['Name'] }}</td>
+      <td align="center">{{ store['Type'] }}</td>
+      <td align="center">{{ store['Address'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% include "components/pagination.html" %}
+</main>
+{% endblock %}
