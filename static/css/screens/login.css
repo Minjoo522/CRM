@@ -1,7 +1,10 @@
 .login__main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-accent-variant);
 }
 
 .login__title {
@@ -59,7 +62,8 @@
   width: 300px;
   height: 40px;
   font-size: 1rem;
-  background-color: var(--color-accent-variant);
+  background-color: var(--color-accent);
+
   border-radius: 5px;
   font-weight: bold;
 }

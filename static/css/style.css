@@ -53,19 +53,3 @@ button:hover {
 input {
   border: none;
 }
-
-/* common */
-.max-container {
-  width: 75%;
-}
-
-/* Main */
-main {
-  margin-top: 53px;
-  padding: 0 15px;
-}
-
-caption {
-  text-align: left;
-  font-size: 1rem;
-}

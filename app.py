@@ -23,9 +23,9 @@ app.register_blueprint(order_item_detail_view.bp)
 @app.route('/')
 def index():
     if 'id' in session:
-        return redirect(url_for('users'))
+        return redirect(url_for('users.users'))
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('login.login'))
 
 # orderitem_detail
 # @app.route('/orderitem_detail')
