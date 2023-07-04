@@ -1,5 +1,5 @@
 {% extends 'layout.html' %} {% block content %}
-<!-- Form -->
+<!-- Stores Search Form -->
 <form method="get">
   <div>
     <label for="store-name">Store:</label>
@@ -25,4 +25,4 @@
   </tr>
   {% endfor %}
 </table>
-{% include "pagination.html" %} {% endblock %}
+{% include "components/pagination.html" %} {% endblock %}

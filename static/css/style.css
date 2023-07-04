@@ -1,6 +1,8 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+@import 'variables.css';
+
 /* Components */
 @import 'components/nav-bar.css';
 @import 'components/table.css';
@@ -8,7 +10,7 @@
 
 /* Screens */
 @import 'screens/user.css';
-@import 'screens/index.css';
+@import 'screens/login.css';
 
 * {
   box-sizing: border-box;
@@ -16,17 +18,20 @@
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 a {
@@ -34,18 +39,18 @@ a {
   color: black;
 }
 
-.submit {
+button {
   background-color: transparent;
   outline: 0;
   border: 0;
 }
 
-.submit:hover {
+button:hover {
   cursor: pointer;
 }
 
 /* common */
-.max-width {
+.max-container {
   width: 75%;
 }
 

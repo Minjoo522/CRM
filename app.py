@@ -3,6 +3,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import csv
 import os
 
+from pagination import Pagination
+
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -13,21 +15,6 @@ def load_file(file_path):
         for data in datas:
             data_list.append(data)
     return data_list
-
-# Pagination
-PER_PAGE = 10
-
-def get_total_pages(data):
-    total_pages = len(data) // PER_PAGE + (len(data) % PER_PAGE > 0)
-    return total_pages
-
-def get_start_index(page):
-    start_index = PER_PAGE * (page - 1)
-    return start_index
-
-def get_end_index(start_index):
-    end_index = start_index + PER_PAGE
-    return end_index
 
 @app.route('/')
 def index():
@@ -106,9 +93,9 @@ def users():
     keywords += "&name=" + search_name
     keywords += "&gender=" + search_gender
 
-    total_pages = get_total_pages(data)
-    start_index = get_start_index(page)
-    end_index = get_end_index(start_index)
+    total_pages = Pagination().get_total_pages(data)
+    start_index = Pagination().get_start_index(page)
+    end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
     return render_template("users.html", users = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_name=search_name)
 
@@ -135,9 +122,9 @@ def stores():
     keywords = ""
     keywords += "&store-name=" + search_store_name
 
-    total_pages = get_total_pages(data)
-    start_index = get_start_index(page)
-    end_index = get_end_index(start_index)
+    total_pages = Pagination().get_total_pages(data)
+    start_index = Pagination().get_start_index(page)
+    end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
     return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_store_name = search_store_name)
 
@@ -167,9 +154,9 @@ def items():
     keywords = ""
     keywords += "&type=" + search_type
 
-    total_pages = get_total_pages(data)
-    start_index = get_start_index(page)
-    end_index = get_end_index(start_index)
+    total_pages = Pagination().get_total_pages(data)
+    start_index = Pagination().get_start_index(page)
+    end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
     return render_template("items.html", items = page_data, total_pages = total_pages, current_page = page, item_type = item_type, keywords=keywords)
     
@@ -191,9 +178,9 @@ def orders():
     for order in orders:
         data.append(order)
 
-    total_pages = get_total_pages(data)
-    start_index = get_start_index(page)
-    end_index = get_end_index(start_index)
+    total_pages = Pagination().get_total_pages(data)
+    start_index = Pagination().get_start_index(page)
+    end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
     return render_template("orders.html", orders = page_data, total_pages = total_pages, current_page = page)
     
@@ -211,11 +198,11 @@ def order_items():
     for order_item in order_items:
         data.append(order_item)
 
-    total_pages = get_total_pages(data)
-    start_index = get_start_index(page)
-    end_index = get_end_index(start_index)
+    total_pages = Pagination().get_total_pages(data)
+    start_index = Pagination().get_start_index(page)
+    end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
     return render_template("order_items.html", order_items = page_data, total_pages = total_pages, current_page = page)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8001)
+    app.run(host="0.0.0.0", debug=True, port="8080")
