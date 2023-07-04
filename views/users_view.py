@@ -27,4 +27,4 @@ def users():
     start_index = Pagination().get_start_index(page)
     end_index = Pagination().get_end_index(start_index)
     page_data = data[start_index:end_index]
-    return render_template("users.html", users = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_name=search_name)
+    return render_template("users.html", users = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_name=search_name, search_gender = search_gender)

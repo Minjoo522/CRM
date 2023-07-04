@@ -15,7 +15,7 @@ def signup():
         password2 = request.form['password2']
 
         if any(member["Id"] == sign_id for member in members):
-            error = '아이디 중복'
+            error = '중복된 아이디입니다.'
         elif password1 != password2:
             error = '비밀번호가 일치하지 않습니다.'
         else:
@@ -24,5 +24,5 @@ def signup():
                 fieldnames = ["Id", "Password"]
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writerow(new_member)
-            return redirect(url_for('login'))
+            return redirect(url_for('login.login'))
     return render_template("auth/signup.html", error = error)

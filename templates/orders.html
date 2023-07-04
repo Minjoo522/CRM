@@ -10,7 +10,10 @@
     {% for order in orders %}
     <tr class="table__item hover">
       <td>
-        <a class="table__item id" href="orderitem_detail/{{ order['Id'] }}"
+        <!-- TODO: 추후 수정 -->
+        <a
+          class="table__item id"
+          href="{{ url_for('order_item_detail.order_item_detail') }}"
           >{{ order['Id'] }}</a
         >
       </td>

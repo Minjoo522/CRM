@@ -14,7 +14,7 @@ def stores():
     page_data = []
 
     for store in stores:
-        if search_store_name in store['Name']:
+        if search_store_name.strip() in store['Name'][:-2]:
             data.append(store)
 
     keywords = ""

@@ -5,7 +5,7 @@ from pagination import Pagination
 app = Flask(__name__)
 
 # views
-from views import items_view, login_view, logout_view, signup_view, users_view, user_detail_view, stores_view, store_detail_view, item_detail_view, orders_view, order_items_view
+from views import items_view, login_view, logout_view, signup_view, users_view, user_detail_view, stores_view, store_detail_view, item_detail_view, orders_view, order_items_view, order_item_detail_view
 app.secret_key = os.urandom(24)
 app.register_blueprint(login_view.bp)
 app.register_blueprint(logout_view.bp)
@@ -18,6 +18,7 @@ app.register_blueprint(items_view.bp)
 app.register_blueprint(item_detail_view.bp)
 app.register_blueprint(orders_view.bp)
 app.register_blueprint(order_items_view.bp)
+app.register_blueprint(order_item_detail_view.bp)
 
 @app.route('/')
 def index():

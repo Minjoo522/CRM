@@ -10,9 +10,10 @@
     <tr class="table__item hover">
       <td>{{ order_item['Id'] }}</td>
       <td>
+        <!-- TODO: 주소 추후 수정 -->
         <a
           class="table__item id"
-          href="order_detail/{{ order_item['OrderId'] }}"
+          href="{{ url_for('order_item_detail.order_item_detail') }}"
           >{{ order_item['OrderId'] }}</a
         >
       </td>

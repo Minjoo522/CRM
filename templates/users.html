@@ -9,9 +9,9 @@
     <div class="user-form__gender">
       <label for="gender">Gender:</label>
       <select name="gender">
-        <option selected value=""></option>
-        <option value="Female">female</option>
-        <option value="Male">male</option>
+        <option value=""></option>
+        <option value="Female" {% if search_gender == "Female" %} selected {% endif %}>female</option>
+        <option value="Male" {% if search_gender == "Male" %} selected {% endif %}>male</option>
       </select>
     </div>
     <input class="user-form__submit submit" type="submit" value="Submit" />
