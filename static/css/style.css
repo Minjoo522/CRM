@@ -4,7 +4,7 @@
 @import 'variables.css';
 
 /* Components */
-@import 'components/nav-bar.css';
+@import 'components/header.css';
 @import 'components/table.css';
 @import 'components/pagination.css';
 
@@ -42,6 +42,7 @@ a {
 
 button {
   background-color: transparent;
+  padding: 0;
   outline: 0;
   border: 0;
 }
@@ -52,4 +53,8 @@ button:hover {
 
 input {
   border: none;
+}
+
+select {
+  appearance: none;
 }

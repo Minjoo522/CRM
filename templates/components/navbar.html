@@ -1,10 +1,12 @@
-<nav class="max-width">
-  <ul class="menu">
-    <li><a class="menu__item" href="/users">User</a></li>
-    <li><a class="menu__item" href="/orders">Order</a></li>
-    <li><a class="menu__item" href="/order_items">Order Item</a></li>
-    <li><a class="menu__item" href="/items">Item</a></li>
-    <li><a class="menu__item" href="/stores">Store</a></li>
+<nav class="navbar">
+  <ul class="navbar__menus">
+    <li><a class="menu__item" href="/users">USER</a></li>
+    <li><a class="menu__item" href="/orders">ORDER</a></li>
+    <li><a class="menu__item" href="/order_items">ORDER ITEM</a></li>
+    <li><a class="menu__item" href="/items">ITEM</a></li>
+    <li><a class="menu__item" href="/stores">STORE</a></li>
+    <li>
+      <a class="menu__item" href="{{ url_for('logout.logout') }}">로그아웃</a>
+    </li>
   </ul>
-  <button type="button" onclick="location.href='/login'">LOGOUT</button>
 </nav>
