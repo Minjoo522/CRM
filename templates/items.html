@@ -1,16 +1,17 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
 <main class="main">
-  <form method="get">
+  <!-- Items Search Form -->
+  <form method="get" class="form">
     <div>
-      <label for="type">Type:</label>
-      <select name="type">
-        <option selected value=""></option>
+      <label for="type">Type </label>
+      <select class="form__select" name="type">
+        <option selected value="">종류를 선택하세요</option>
         {% for type in item_type %}
         <option value="{{ type }}">{{ type }}</option>
         {% endfor %}
       </select>
     </div>
-    <input class="submit" type="submit" value="Submit" />
+    <button class="form__button" type="submit">SUBMIT</button>
   </form>
   <!-- Stores Table -->
   <table>

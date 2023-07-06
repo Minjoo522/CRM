@@ -4,6 +4,7 @@
   padding: 0.5rem 0;
   top: 0;
   background-color: var(--color-accent-variant);
+  z-index: 1;
 }
 
 .header__title {

@@ -19,9 +19,9 @@
 }
 
 .current-page {
-  background-color: rgba(216, 112, 147, 0.534);
+  background-color: var(--color-accent);
 }
 
 .pagination a:hover {
-  background-color: rgba(216, 112, 147, 0.534);
+  background-color: var(--color-accent);
 }

@@ -1,20 +1,20 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
-<!-- Users Serch Form -->
 <main class="main">
-  <form method="get" class="user-form">
-    <div class="form__text">
-      <label for="name">Name:</label>
-      <input type="text" name="name" value="{{ search_name }}" />
+  <!-- Users Serch Form -->
+  <form method="get" class="form">
+    <div>
+      <label for="name">Name </label>
+      <input class="form__text__input" type="text" name="name" value="{{ search_name }}" />
     </div>
-    <div class="form__select">
-      <label for="gender">Gender:</label>
-      <select name="gender">
-        <option value=""></option>
+    <div>
+      <label for="gender">Gender </label>
+      <select class="form__select" name="gender">
+        <option value="">성별을 선택하세요</option>
         <option value="Female" {% if search_gender == "Female" %} selected {% endif %}>female</option>
         <option value="Male" {% if search_gender == "Male" %} selected {% endif %}>male</option>
       </select>
     </div>
-    <input class="user-form__submit submit" type="submit" value="Submit" />
+    <button class="form__button" type="submit">SUBMIT</button>
   </form>
   <!-- Users Table -->
   <table>
