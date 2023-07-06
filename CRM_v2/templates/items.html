@@ -1,0 +1,38 @@
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main class="main">
+  <!-- Items Search Form -->
+  <form method="get" class="form">
+    <div>
+      <label for="type">Type </label>
+      <select class="form__select" name="type">
+        <option selected value="">종류를 선택하세요</option>
+        {% for type in item_type %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button class="form__button" type="submit">SUBMIT</button>
+  </form>
+  <!-- Stores Table -->
+  <table>
+    <tr>
+      <th align="left">id</th>
+      <th>type</th>
+      <th>name</th>
+      <th>unit_price</th>
+    </tr>
+    {% for item in items %}
+    <tr
+      class="table__item hover"
+      onclick="location.href='/item_detail/{{ item.Id }}'"
+    >
+      <td>{{ item['Id'] }}</td>
+      <td align="center">{{ item['Type'] }}</td>
+      <td align="center">{{ item['Name'] }}</td>
+      <td align="center">{{ item['UnitPrice'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% include "components/pagination.html" %}
+</main>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main class="main">
+  <!-- Users Serch Form -->
+  <form method="get" class="form">
+    <div>
+      <label for="name">Name </label>
+      <input class="form__text__input" type="text" name="name" value="{{ search_name }}" />
+    </div>
+    <div>
+      <label for="gender">Gender </label>
+      <select class="form__select" name="gender">
+        <option value="">성별을 선택하세요</option>
+        <option value="Female" {% if search_gender == "Female" %} selected {% endif %}>female</option>
+        <option value="Male" {% if search_gender == "Male" %} selected {% endif %}>male</option>
+      </select>
+    </div>
+    <button class="form__button" type="submit">SUBMIT</button>
+  </form>
+  <!-- Users Table -->
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Birthdate</th>
+    </tr>
+    {% for user in users %}
+    <tr class="table__item hover" onclick="location.href='/user_detail/{{ user.Id }}'">
+      <td align="center">{{ user['Name'] }}</td>
+      <td align="center">{{ user['Gender'] }}</td>
+      <td align="center">{{ user['Age'] }}</td>
+      <td align="center">{{ user['Birthdate'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% include "components/pagination.html" %}
+</main>
+{% endblock %}
