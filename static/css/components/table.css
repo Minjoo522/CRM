@@ -6,8 +6,8 @@ table {
 
 th {
   padding: 10px;
-  border-top: 1px solid #dee2e6;
-  border-bottom: 1.5px solid #dee2e6;
+  border-top: 1px solid var(--color-accent);
+  border-bottom: 1.5px solid var(--color-accent);
   font-size: 1.1rem;
 }
 
@@ -17,17 +17,8 @@ th {
   font-size: 1rem;
 }
 
-.table__item.id {
-  color: #026ee2;
-}
-
-.table__item.id:hover {
-  text-decoration: underline;
-  text-decoration-color: #0057b4;
-  color: #0057b4;
-}
-
 .table__item.hover:hover {
-  background-color: #ececf6;
+  background-color: var(--color-primary);
+  filter: brightness(1.3);
   cursor: pointer;
 }

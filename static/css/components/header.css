@@ -33,3 +33,14 @@
 .menu__item:hover {
   border-bottom: 3px solid var(--color-primary);
 }
+
+.logout__button {
+  position: absolute;
+  top: 86px;
+  right: 30px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+  border-radius: 8px;
+}

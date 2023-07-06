@@ -11,7 +11,7 @@
   height: 45px;
   line-height: 25.5px;
   padding: 8px;
-  border: 1px solid palevioletred;
+  border: 1px solid var(--color-accent);
   border-radius: 5px;
   text-align: center;
   font-size: 0.8rem;

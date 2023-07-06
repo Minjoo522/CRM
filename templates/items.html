@@ -21,12 +21,11 @@
       <th>unit_price</th>
     </tr>
     {% for item in items %}
-    <tr class="table__item hover">
-      <td>
-        <a class="table__item id" href="item_detail/{{item['Id']}}"
-          >{{ item['Id'] }}
-        </a>
-      </td>
+    <tr
+      class="table__item hover"
+      onclick="location.href='/item_detail/{{ item.Id }}'"
+    >
+      <td>{{ item['Id'] }}</td>
       <td align="center">{{ item['Type'] }}</td>
       <td align="center">{{ item['Name'] }}</td>
       <td align="center">{{ item['UnitPrice'] }}</td>
