@@ -1,6 +1,6 @@
 from flask import Blueprint, request, session, redirect, url_for, render_template
 from werkzeug.security import check_password_hash
-from load_file import load_file
+from common.load_file import load_file
 
 bp = Blueprint('login', __name__)
 

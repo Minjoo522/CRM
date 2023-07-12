@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template
-from load_file import load_file
-from pagination import Pagination
+from common.load_file import load_file
+from common.pagination import Pagination
 
 bp = Blueprint('order_items', __name__)
 

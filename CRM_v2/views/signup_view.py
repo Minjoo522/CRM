@@ -1,7 +1,7 @@
 from flask import Blueprint, request, redirect, url_for, render_template
 from werkzeug.security import generate_password_hash
 import csv
-from load_file import load_file
+from common.load_file import load_file
 
 bp = Blueprint('signup', __name__)
 

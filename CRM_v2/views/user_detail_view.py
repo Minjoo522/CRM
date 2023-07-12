@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from load_file import load_file
+from common.load_file import load_file
 
 bp = Blueprint('user_detail', __name__)
 
