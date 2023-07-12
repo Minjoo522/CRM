@@ -1,6 +1,7 @@
 from flask import Blueprint, request, render_template
 from common.load_file import load_file
 from common.pagination import Pagination
+from db import get_info
 
 bp = Blueprint('users', __name__)
 
@@ -9,7 +10,7 @@ def users():
     page = request.args.get('page', default=1, type=int)
     search_name = request.args.get('name', default="", type=str)
     search_gender = request.args.get('gender', default="", type=str)
-    users = load_file("src/user.csv")
+    users = get_info()
 
     data = []
     page_data = []
