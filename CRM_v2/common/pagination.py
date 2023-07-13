@@ -1,6 +1,7 @@
 class Pagination:
     PER_PAGE = 10
 
+    # db: 쿼리문으로 한 번에 실행
     def get_total_pages(self, data):
         total_pages = len(data) // self.PER_PAGE + (len(data) % self.PER_PAGE > 0)
         return total_pages

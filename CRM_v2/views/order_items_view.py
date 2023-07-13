@@ -1,13 +1,13 @@
 from flask import Blueprint, request, render_template
-from common.load_file import load_file
 from common.pagination import Pagination
+from db import get_info
 
 bp = Blueprint('order_items', __name__)
 
 @bp.route('/order_items/')
 def order_items():
     page = request.args.get('page', default=1, type=int)
-    order_items = load_file("src/orderitem.csv")
+    order_items = get_info('orderitem')
 
     data = []
     page_data = []
