@@ -1,8 +1,11 @@
 import sqlite3
 
+# TODO: 나중에 지우기
 conn = sqlite3.connect('database/crm.db', check_same_thread=False)
 conn.row_factory = sqlite3.Row
 cursor = conn.cursor()
+
+# TODO: 한 페이지 당 표시할 아이템 개수 어디에 정의할지 고민!
 per_page = 10
 
 # 싱글톤?
@@ -36,6 +39,7 @@ class DbController:
         result = self.cursor.fetchone()
         return result
 
+# TODO: 나중에 삭제하기!
 def get_info(data_type):
     cursor.execute('select * from {}'.format(data_type))
     results = cursor.fetchall()
