@@ -19,17 +19,12 @@ class DbController:
     conn2 = sqlite3.connect('database/crm.db', check_same_thread=False)
     cursor2 = conn2.cursor()
 
-    def get_info(self, data_type):
-        self.cursor.execute('select * from {}'.format(data_type))
-        result = self.cursor.fetchall()
-        return result
-    
-    def get_count(self, data_type):
+    def get_total_pages(self, data_type):
         self.cursor2.execute('select count(*) from {}'.format(data_type))
-        result = self.cursor2.fetchone()
-        total_pages = int(result[0]) // per_page + (int(result[0]) % per_page > 0)
-        return total_pages
-    
+        count = self.cursor2.fetchone()
+        result = int(count[0]) // per_page + (int(count[0]) % per_page > 0)
+        return result
+
     def page_item(self, data_type, page):
         self.cursor.execute('select * from {} limit {} offset ({}-1)*{}'.format(data_type, per_page, page, per_page))
         result = self.cursor.fetchall()
@@ -39,17 +34,17 @@ class DbController:
         self.cursor.execute('select * from {} where id="{}"'.format(data_type, id))
         result = self.cursor.fetchone()
         return result
-    
+
     def search_name_gender(self, data_type, search_name, search_gender, page):
         self.cursor.execute(f'select * from {data_type} where name like "%{search_name}%" and gender like "%{search_gender}%" limit {per_page} offset ({page}-1)*{per_page}')
         result = self.cursor.fetchall()
         return result
 
-    def search_total_page(self, data_type, search_name, search_gender):
+    def get_search_total_pages(self, data_type, search_name, search_gender):
         self.cursor2.execute(f'select count(*) from {data_type} where name like "%{search_name}%" and gender like "%{search_gender}%"')
-        result = self.cursor2.fetchone()
-        total_pages = int(result[0]) // per_page + (int(result[0]) % per_page > 0)
-        return total_pages
+        count = self.cursor2.fetchone()
+        result = int(count[0]) // per_page + (int(count[0]) % per_page > 0)
+        return result
 
 # TODO: 나중에 삭제하기!
 def get_info(data_type):
