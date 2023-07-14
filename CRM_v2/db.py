@@ -19,29 +19,35 @@ class DbController:
     conn2 = sqlite3.connect('database/crm.db', check_same_thread=False)
     cursor2 = conn2.cursor()
 
+    # 이동 완료!
     def get_total_pages(self, data_type):
         self.cursor2.execute('select count(*) from {}'.format(data_type))
         count = self.cursor2.fetchone()
         result = int(count[0]) // per_page + (int(count[0]) % per_page > 0)
         return result
 
+    # 이동 완료!
     def page_item(self, data_type, page):
         self.cursor.execute('select * from {} limit {} offset ({}-1)*{}'.format(data_type, per_page, page, per_page))
         result = self.cursor.fetchall()
         return result
 
-    def searh_id(self, data_type, id):
+    # user, item, store 디테일에 사용 가능!
+    def searh_by_id(self, data_type, id):
         self.cursor.execute('select * from {} where id="{}"'.format(data_type, id))
         result = self.cursor.fetchone()
         return result
 
+    # 필요한 페이지 각각 만들어 주는게 좋을지?
     def search_name_gender(self, data_type, search_name, search_gender, page):
-        self.cursor.execute(f'select * from {data_type} where name like "%{search_name}%" and gender like "%{search_gender}%" limit {per_page} offset ({page}-1)*{per_page}')
+        query = f"SELECT * FROM {data_type} WHERE Name LIKE ? AND Gender LIKE ? LIMIT {per_page} OFFSET ({page}-1)*{per_page}"
+        self.cursor.execute(query, (f"%{search_name}%", f"%{search_gender}%"))
         result = self.cursor.fetchall()
         return result
 
     def get_search_total_pages(self, data_type, search_name, search_gender):
-        self.cursor2.execute(f'select count(*) from {data_type} where name like "%{search_name}%" and gender like "%{search_gender}%"')
+        query = f"SELECT COUNT(*) FROM {data_type} WHERE Name LIKE ? AND Gender LIKE ?"
+        self.cursor2.execute(query, (f"%{search_name}%", f"%{search_gender}%"))
         count = self.cursor2.fetchone()
         result = int(count[0]) // per_page + (int(count[0]) % per_page > 0)
         return result
@@ -55,3 +61,9 @@ def get_info(data_type):
 # DB 클래스 : conn, cursor -> 싱글톤?
 # JOIN해야 하는 것
 # 검색창 검색!
+
+# order id / orderitem id / item
+# SELECT OI.*, I.Name FROM orderitem OI
+# JOIN orders O ON O.Id = OI.OrderId
+# JOIN item I ON OI.ItemId = I.Id
+# WHERE O.Id = "5d7b799e-d7fa-4267-b334-fc2d16a5373b";
