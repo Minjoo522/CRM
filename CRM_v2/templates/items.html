@@ -7,7 +7,7 @@
       <select class="form__select" name="type">
         <option selected value="">종류를 선택하세요</option>
         {% for type in item_type %}
-        <option value="{{ type }}">{{ type }}</option>
+        <option value="{{ type[0]|safe }}">{{ type[0]|safe }}</option>
         {% endfor %}
       </select>
     </div>
@@ -22,10 +22,7 @@
       <th>unit_price</th>
     </tr>
     {% for item in items %}
-    <tr
-      class="table__item hover"
-      onclick="location.href='/item_detail/{{ item.Id }}'"
-    >
+    <tr class="table__item hover" onclick="location.href='/item_detail/{{ item.Id }}'">
       <td>{{ item['Id'] }}</td>
       <td align="center">{{ item['Type'] }}</td>
       <td align="center">{{ item['Name'] }}</td>

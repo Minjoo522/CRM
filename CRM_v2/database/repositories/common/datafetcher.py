@@ -31,3 +31,10 @@ class DataFetcher(DbController):
         self.close_connection()
         return result
     
+    def get_distinct(self, data_type, column):
+        self.connect()
+        query = f"SELECT DISTINCT {column} FROM {data_type}"
+        self.execute_query(query)
+        result = self.fetch_all()
+        self.close_connection()
+        return result

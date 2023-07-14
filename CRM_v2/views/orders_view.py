@@ -1,22 +1,20 @@
 from flask import Blueprint, request, render_template
-from common.pagination import Pagination
-from db import get_info
+from database.repositories.order_repository import Order
+
 
 bp = Blueprint('orders', __name__)
 
 @bp.route('/orders/')
 def orders():
+    db = Order()
+
     page = request.args.get('page', default=1, type=int)
-    orders = get_info('orders')
 
-    data = []
-    page_data = []
-    
-    for order in orders:
-        data.append(order)
+    # if search_store_name:
+    #     total_pages = db.get_search_total_pages('store', search_store_name)
+    #     page_data = db.get_search_data('store', search_store_name, page)
+    # else:
+    total_pages = db.get_total_pages('orders')
+    page_data = db.get_page_item('orders', page)
 
-    total_pages = Pagination().get_total_pages(data)
-    start_index = Pagination().get_start_index(page)
-    end_index = Pagination().get_end_index(start_index)
-    page_data = data[start_index:end_index]
     return render_template("orders.html", orders = page_data, total_pages = total_pages, current_page = page)
