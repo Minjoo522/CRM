@@ -5,6 +5,15 @@ class DataFetcher(DbController):
     def __init__(self):
         super().__init__()
     
+    def searh_by_id(self, data_type, id):
+        self.connect_to_row()
+        query = f"SELECT * FROM {data_type} WHERE Id=?"
+        row = (id, )
+        self.execute_query(query, row)
+        result = self.fetch_one()
+        self.close_connection()
+        return result
+
     def get_page_item(self, data_type, page, search=None, row=None):
         self.connect_to_row()
         offset = (page - 1) * self.__PER_PAGE

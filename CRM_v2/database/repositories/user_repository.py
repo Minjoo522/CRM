@@ -13,3 +13,4 @@ class User(DataFetcher):
         query = f"Name LIKE ? AND Gender LIKE ?"
         row = (f'%{search_name}%', f'%{search_gender}%')
         return self.get_total_pages(data_type, query, row)
+
