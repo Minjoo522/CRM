@@ -8,8 +8,7 @@ class DataFetcher(DbController):
     def search_by_id(self, data_type, id):
         self.connect_to_row()
         query = f"SELECT * FROM {data_type} WHERE Id=?"
-        row = (id, )
-        self.execute_query(query, row)
+        self.execute_query(query, (id, ))
         result = self.fetch_one()
         self.close_connection()
         return result

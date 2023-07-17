@@ -14,4 +14,4 @@ class User(DataFetcher):
             query.append(f"Gender LIKE ?")
             row.append(f'{search_gender}')
         query = " AND ".join(query)
-        return query, tuple(row)
+        return query, row
