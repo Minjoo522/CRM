@@ -14,16 +14,16 @@ class DataFetcher(DbController):
         self.close_connection()
         return result
 
-    def get_page_item(self, data_type, page, search=None):
+    def get_page_item(self, data_type, page, search=None, row=None):
         self.connect_to_row()
         offset = (page - 1) * self.__PER_PAGE
 
         if search:
             query = f"SELECT * FROM {data_type} WHERE {search} LIMIT ? OFFSET ?"
-            self.execute_query(query, (self.__PER_PAGE, offset))
+            self.execute_query(query, (*row, self.__PER_PAGE, offset))
         else:
             query = f"SELECT * FROM {data_type} LIMIT ? OFFSET ?"
-            self.execute_query(query, (self.__PER_PAGE, offset))
+            self.execute_query(query, (*row, self.__PER_PAGE, offset))
 
         result = self.fetch_all()
         self.close_connection()
@@ -51,3 +51,9 @@ class DataFetcher(DbController):
         result = self.fetch_all()
         self.close_connection()
         return result
+
+    def get_search_result(self, data_type, page, *args):
+        query, row = self.build_query(*args)
+        search_data = self.get_page_item(data_type, page, query, row)
+        total_pages = self.get_total_pages(data_type, query, row)
+        return search_data, total_pages
