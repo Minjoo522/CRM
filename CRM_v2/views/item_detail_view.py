@@ -6,5 +6,5 @@ bp = Blueprint('item_detail', __name__)
 @bp.route('/item_detail/<selected_id>/')
 def item_detail(selected_id):
     db = Item()
-    item = db.searh_by_id('item', selected_id)
+    item = db.search_by_id('item', selected_id)
     return render_template("item_detail.html", item = item)

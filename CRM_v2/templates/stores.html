@@ -4,27 +4,19 @@
   <form method="get" class="form">
     <div>
       <label for="store-name">Store </label>
-      <input
-        class="form__text__input"
-        type="text"
-        name="store-name"
-        value="{{ search_store_name }}"
-      />
+      <input class="form__text__input" type="text" name="store-name" value="{{ search_store_name }}" />
     </div>
     <button class="form__button" type="submit">SUBMIT</button>
   </form>
   <!-- Stores Table -->
   <table>
     <tr>
-      <th>type</th>
       <th>name</th>
+      <th>type</th>
       <th>addreess</th>
     </tr>
     {% for store in stores %}
-    <tr
-      class="table__item hover"
-      onclick="location.href='/store_detail/{{ store.Id }}'"
-    >
+    <tr class="table__item hover" onclick="location.href='/store_detail/{{ store.Id }}'">
       <td align="center">{{ store['Name'] }}</td>
       <td align="center">{{ store['Type'] }}</td>
       <td align="center">{{ store['Address'] }}</td>
