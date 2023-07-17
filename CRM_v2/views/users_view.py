@@ -15,8 +15,7 @@ def users():
     keywords += "&gender=" + search_gender
 
     if search_name or search_gender:
-        total_pages = db.get_search_total_pages('user', search_name, search_gender)
-        page_data = db.get_search_data('user', search_name, search_gender, page)
+        page_data, total_pages = db.get_search_result('user', search_name, search_gender, page)
     else:
         total_pages = db.get_total_pages('user')
         page_data = db.get_page_item('user', page)
