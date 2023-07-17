@@ -14,8 +14,7 @@ def stores():
     keywords += "&store-name=" + search_store_name
 
     if search_store_name:
-        total_pages = db.get_search_total_pages('store', search_store_name)
-        page_data = db.get_search_data('store', search_store_name, page)
+        page_data, total_pages = db.get_search_result('store', page, search_store_name)
     else:
         total_pages = db.get_total_pages('store')
         page_data = db.get_page_item('store', page)

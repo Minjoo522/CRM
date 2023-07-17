@@ -4,12 +4,15 @@ class OrderItem(DataFetcher):
     def __init__(self):
         super().__init__()
 
-    def get_search_data(self, data_type, search_name, page):
-        query = f"Name LIKE ?"
-        row = (f'%{search_name}%', )
-        return self.get_page_item(data_type, page, query, row)
-    
-    def get_search_total_pages(self, data_type, search_name):
-        query = f"Name LIKE ?"
-        row = (f'%{search_name}%', )
-        return self.get_total_pages(data_type, query, row)
+    def build_query(self, id):
+        self.connect_to_row()
+        query = f"""
+                SELECT OI.*, I.Name FROM orderitem OI
+                JOIN orders O ON O.Id = OI.OrderId
+                JOIN item I ON OI.ItemId = I.Id
+                WHERE O.Id = "{id}";
+                """
+        self.execute_query(query)
+        result = self.fetch_one()
+        self.close_connection
+        return result

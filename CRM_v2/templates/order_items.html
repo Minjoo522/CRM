@@ -3,16 +3,14 @@
   <table>
     <tr>
       <th align="left">id</th>
-      <th align="left">order_id</th>
-      <th align="left">item_id</th>
+      <th align="left">order id</th>
+      <th align="left">item id</th>
     </tr>
     {% for order_item in order_items %}
     <tr class="table__item hover">
       <td>{{ order_item['Id'] }}</td>
       <td>
-        <a class="table__item id" href="{{ url_for('order_item_detail.order_item_detail') }}"
-          >{{ order_item['OrderId'] }}</a
-        >
+        <a class="table__item id" href="/order_detail/{{ order_item['OrderId'] }}">{{ order_item['OrderId'] }}</a>
       </td>
       <td>
         <a class="table__item id" href="/item_detail/{{ order_item['ItemId'] }}">{{ order_item['ItemId'] }}</a>

@@ -22,7 +22,7 @@ class DataFetcher(DbController):
             self.execute_query(query, (*row, self.__PER_PAGE, offset))
         else:
             query = f"SELECT * FROM {data_type} LIMIT ? OFFSET ?"
-            self.execute_query(query, (*row, self.__PER_PAGE, offset))
+            self.execute_query(query, (self.__PER_PAGE, offset))
 
         result = self.fetch_all()
         self.close_connection()

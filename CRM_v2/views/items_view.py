@@ -16,8 +16,7 @@ def items():
     item_type = db.get_type()
 
     if search_type:
-        total_pages = db.get_search_total_pages(search_type)
-        page_data = db.get_search_data(search_type, page)
+        page_data, total_pages = db.get_search_result('item', page, search_type)
     else:
         total_pages = db.get_total_pages('item')
         page_data = db.get_page_item('item', page)
