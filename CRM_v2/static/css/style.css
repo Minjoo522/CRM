@@ -9,6 +9,7 @@
 @import 'components/pagination.css';
 @import 'components/form.css';
 @import 'components/detail.css';
+@import 'components/map.css';
 
 /* Screens */
 @import 'screens/user.css';

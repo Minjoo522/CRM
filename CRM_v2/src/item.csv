@@ -1,51 +1,15 @@
 Id,Name,Type,UnitPrice
-ed6a435b-ff1c-4d1f-9da0-80aed01909f8,Orange Juice,Juice,2000
-f0cd7a7d-b2f6-481d-b55f-eccb756cb072,Latte Coffee,Coffee,4000
-0d3a21da-9721-448a-8de3-22f07e39579f,Pineapple Juice,Juice,3500
-322012a9-182c-4ab9-b2ac-2d4fba8ac9c9,Orange Juice,Juice,2000
-e8e29f39-9645-4b1d-a484-b89683246a17,Chocolate Cake,Cake,6000
-172bb5ff-e155-4efc-a48b-450cc956502f,Americano Coffee,Coffee,3000
-f38bc786-08f1-427b-82fa-8aa09f8b7ffc,Chocolate Cake,Cake,6000
-d604a70e-8116-4623-a50f-bf0a4fa3a024,Latte Coffee,Coffee,4000
-8e74128c-ed4c-4933-85a6-9bf95746e498,Americano Coffee,Coffee,3000
-3ded3082-ced2-456b-bded-fd99a9d2acae,Orange Juice,Juice,2000
-662b2d5e-e708-45bc-8a77-c2fae8f0600e,Chocolate Cake,Cake,6000
-e13499f2-78ae-4d47-a694-efd0c0b4c566,Mocha Coffee,Coffee,5000
-ba817b04-302b-47b1-afb9-a0051c0a6754,Espresso Coffee,Coffee,2500
-aeed70ed-b4ea-4790-b917-ab884fe52d59,Grape Juice,Juice,3000
-ffcafa24-e939-4970-b4dd-2db1616060a7,Carrot Cake,Cake,6000
-7efd92cb-9c01-46eb-b7c0-b274edadb649,Pineapple Juice,Juice,3500
-4b489d9b-55c4-4d28-9d77-e39fe780f0b0,Cappuccino Coffee,Coffee,4500
-e52d2c50-a1a8-4cbd-be82-e49ac18006b5,Watermelon Juice,Juice,4000
-e65370c5-afdc-42b7-9608-a915277221e5,Espresso Coffee,Coffee,2500
-efcf62bb-c6f5-4111-b03c-2869062406a8,Grape Juice,Juice,3000
-2d34f552-ee76-4e53-ae97-cf56a099cc4f,Cappuccino Coffee,Coffee,4500
-a31751d7-f68a-42af-bb85-754e1faca4c9,Vanilla Cake,Cake,5000
-02c0970e-676d-443d-9437-59938c2365ac,Strawberry Cake,Cake,5500
-63da0aa0-bb44-41a9-a1ed-f2a2ffaf9439,Mocha Coffee,Coffee,5000
-72838516-9ffb-4ee6-92f0-73c95ee3ecab,Americano Coffee,Coffee,3000
-162eba8b-8dc8-4652-8ce3-e56625b42c80,Grape Juice,Juice,3000
-9ec265c0-f5e1-4750-b80b-c4df7b41e614,Red Velvet Cake,Cake,6500
-3cc8b706-451b-423a-a290-0bf9cf842da7,Strawberry Cake,Cake,5500
-9891b44d-5562-4133-be1e-06a1d56864ec,Watermelon Juice,Juice,4000
-00d694e9-32e8-41ef-a303-c59532d6ed74,Red Velvet Cake,Cake,6500
-d84d9e68-8af4-46f7-8d2c-11560d7d6c5d,Apple Juice,Juice,2500
-fc62a0ca-52d4-44c5-8c03-f8b4d8f84a53,Watermelon Juice,Juice,4000
-1769fb4e-eaae-4c3c-b7c7-adda1a701c08,Chocolate Cake,Cake,6000
-19391824-a703-4315-9d92-b8cd760e6ed8,Orange Juice,Juice,2000
-3d2f7dc2-d5aa-4014-a94e-9a63eec32b7c,Pineapple Juice,Juice,3500
-6665fed0-98d0-4ec0-b465-d50df19091fa,Grape Juice,Juice,3000
-64cf33fe-0836-4aeb-9e45-9a08a0e844d7,Latte Coffee,Coffee,4000
-f13b4a20-5626-4767-8526-3ccc4a733196,Grape Juice,Juice,3000
-7eb83021-81d5-466e-b266-d68e8cab2d31,Red Velvet Cake,Cake,6500
-74d0ca57-9f1a-42b0-8a97-fbb03c5312d1,Chocolate Cake,Cake,6000
-db0c0a73-a27e-46a7-9181-ed0a0d2fe644,Strawberry Cake,Cake,5500
-52d953cb-6220-4c74-b777-cb43720e3ccf,Grape Juice,Juice,3000
-c76ed98a-ed02-40d5-9c15-7391a47d1ffe,Espresso Coffee,Coffee,2500
-1e40491a-94cc-486d-91eb-59634fd027d7,Americano Coffee,Coffee,3000
-9d741360-7b1a-423c-8a06-34432830a559,Strawberry Cake,Cake,5500
-459c856a-9354-4993-aac6-de0f407d88e3,Red Velvet Cake,Cake,6500
-2c8614dc-546f-43db-9f61-2f87cf68aa01,Grape Juice,Juice,3000
-868dddef-11c4-4292-9886-f9612f0b42d2,Apple Juice,Juice,2500
-c3a03216-b22e-4eee-8b42-7132649b3e80,Vanilla Cake,Cake,5000
-45c98130-2182-4648-9264-8b5e1c042a13,Americano Coffee,Coffee,3000
+14d9b26e-85df-4d85-bf03-57fa75dceb0d,Carrot Cake,Cake,6000
+ff9ddc29-ca3d-4175-ac95-7ab240078303,Grape Juice,Juice,3000
+24bfbb28-c780-4239-a43e-39d6ab907458,Apple Juice,Juice,2500
+ba4a7898-7d68-495e-ac84-cf5cd6ad97f9,Espresso Coffee,Coffee,2500
+b5b39988-a0ce-4169-a69c-9b43b51aebac,Cappuccino Coffee,Coffee,4500
+11c572fa-4c48-4fbc-b42a-298587ec3c59,Strawberry Cake,Cake,5500
+1c632bbd-923b-49f9-b193-bc8d10e74e04,Orange Juice,Juice,2000
+24e54fe5-2d5b-4769-a658-0cb812451bef,Chocolate Cake,Cake,6000
+56fac4de-ade2-4831-b109-f9d479be7929,Pineapple Juice,Juice,3500
+ad3b6de8-284e-4137-9fc7-0ba15762f279,Vanilla Cake,Cake,5000
+a1604fa2-3266-4db2-a187-e7fc9c1029b3,Mocha Coffee,Coffee,5000
+e5f2c98b-f2bf-42d4-9147-6b0a98f49884,Latte Coffee,Coffee,4000
+da83c903-8717-46af-aa82-f4857722c380,Americano Coffee,Coffee,3000
+dc14c436-de12-4a93-8817-6305970d3e79,Red Velvet Cake,Cake,6500
