@@ -33,9 +33,9 @@
     </tr>
     {% for user_order in user_orders %}
     <tr class="table__item">
-      <td>{{ user_order['Id'] }}</td>
+      <td><a href="/order_item_detail/{{ user_order['Id'] }}/">{{ user_order['Id'] }}</a></td>
       <td>{{ user_order['OrderAt'] }}</td>
-      <td>{{ user_order['StoreId'] }}</td>
+      <td><a href="/store_detail/{{ user_order['StoreId'] }}">{{ user_order['StoreId'] }}</a></td>
     </tr>
     {% endfor %}
   </table>
