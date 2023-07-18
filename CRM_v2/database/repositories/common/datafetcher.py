@@ -4,6 +4,14 @@ class DataFetcher(DbController):
     __PER_PAGE = 10
     def __init__(self):
         super().__init__()
+
+    def fetch_multiple_data(self, query):
+        self.connect_to_row()
+        query = query
+        self.execute_query(query)
+        result = self.fetch_all()
+        self.close_connection()
+        return result
     
     def search_by_id(self, data_type, id):
         self.connect_to_row()

@@ -7,4 +7,12 @@ bp = Blueprint('item_detail', __name__)
 def item_detail(selected_id):
     db = Item()
     item = db.search_by_id('item', selected_id)
-    return render_template("item_detail.html", item = item)
+    month_revenues = db.get_month_revenue(selected_id)
+
+    labels = []
+    total_revenues = []
+    for month_revenue in month_revenues:
+        labels.append(month_revenue['month'])
+        total_revenues.append(month_revenue['totalrevenue'])
+
+    return render_template("item_detail.html", item = item, month_revenues = month_revenues, labels = labels, total_revenues = total_revenues)

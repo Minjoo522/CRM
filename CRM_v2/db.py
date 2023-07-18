@@ -26,3 +26,16 @@ class DbController:
 # JOIN orders O ON O.Id = OI.OrderId
 # JOIN item I ON OI.ItemId = I.Id
 # WHERE O.Id = "5d7b799e-d7fa-4267-b334-fc2d16a5373b";
+
+# user
+# SELECT Id, OrderAt, StoreId FROM orders
+# WHERE UserId = "af3913a2-2248-4349-bbf4-01a1866364f0";
+
+# 매출액
+# SELECT SUBSTR(O.OrderAt, 1, 7) AS "month", sum(I.UnitPrice) AS "totalrevenue", COUNT(OI.Id)
+# FROM item I JOIN orderitem OI
+# ON I.Id = OI.ItemId
+# JOIN orders O
+# ON O.Id = OI.OrderID
+# WHERE I.Id = "ed6a435b-ff1c-4d1f-9da0-80aed01909f8"
+# GROUP BY month;

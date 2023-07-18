@@ -1,7 +1,7 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
 <main class="main">
   <table>
-    <caption>
+    <caption class="table__caption">
       매장 정보
     </caption>
     <tr>
@@ -14,6 +14,23 @@
       <td>{{ store['Type'] }}</td>
       <td>{{ store['Address'] }}</td>
     </tr>
+  </table>
+  <table>
+    <caption class="table__caption">
+      월간 매출액
+    </caption>
+    <tr>
+      <th align="left">Month</th>
+      <th align="left">Revenue</th>
+      <th align="left">count</th>
+    </tr>
+    {% for month_revenue in month_revenues %}
+    <tr class="table__item">
+      <td>{{ month_revenue['month'] }}</td>
+      <td>{{ month_revenue['totalrevenue'] }}</td>
+      <td>{{ month_revenue['itemcount'] }}</td>
+    </tr>
+    {% endfor %}
   </table>
 </main>
 {% endblock %}

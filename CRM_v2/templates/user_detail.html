@@ -1,5 +1,8 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
 <main class="main">
+  <div class="go-back">
+    <a href="javascript:history.back()">이전 페이지로 돌아가기</a>
+  </div>
   <table>
     <caption class="table__caption">
       고객 정보
@@ -19,8 +22,56 @@
       <td>{{ user['Address'] }}</td>
     </tr>
   </table>
-  <div class="go-back">
-    <a href="javascript:history.back()">이전 페이지로 돌아가기</a>
-  </div>
+  <table>
+    <caption class="table__caption">
+      주문 정보
+    </caption>
+    <tr>
+      <th align="left">order id</th>
+      <th align="left">purchased date</th>
+      <th align="left">purchased location</th>
+    </tr>
+    {% for user_order in user_orders %}
+    <tr class="table__item">
+      <td>{{ user_order['Id'] }}</td>
+      <td>{{ user_order['OrderAt'] }}</td>
+      <td>{{ user_order['StoreId'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <table>
+    <caption class="table__caption">
+      자주 방문한 매장 TOP 5
+    </caption>
+    <tr>
+      <th align="center">순위</th>
+      <th align="center">매장 이름</th>
+      <th align="center">방문 횟수</th>
+    </tr>
+    {% for top_visited_store in top_visited_stores %}
+    <tr class="table__item">
+      <td align="center">{{ loop.index }}</td>
+      <td align="center">{{ top_visited_store['Name'] }}</td>
+      <td align="center">{{ top_visited_store['visitcount'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <table>
+    <caption class="table__caption">
+      자주 주문한 메뉴 TOP 5
+    </caption>
+    <tr>
+      <th align="center">순위</th>
+      <th align="center">메뉴</th>
+      <th align="center">주문 횟수</th>
+    </tr>
+    {% for top_ordered_item in top_ordered_items %}
+    <tr class="table__item">
+      <td align="center">{{ loop.index }}</td>
+      <td align="center">{{ top_ordered_item['Name'] }}</td>
+      <td align="center">{{ top_ordered_item['ordercount'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </main>
 {% endblock %}

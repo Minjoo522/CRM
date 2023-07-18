@@ -1,7 +1,7 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
 <main class="main">
   <table>
-    <caption>
+    <caption class="table__caption">
       상품 정보
     </caption>
     <tr>
@@ -13,5 +13,29 @@
       <td>{{ item['UnitPrice'] }}</td>
     </tr>
   </table>
+  <table>
+    <caption class="table__caption">
+      월간 매출액
+    </caption>
+    <tr>
+      <th align="left">Month</th>
+      <th align="left">Total Revenue</th>
+      <th align="left">Item count</th>
+    </tr>
+    {% for month_revenue in month_revenues %}
+    <tr class="table__item">
+      <td>{{ month_revenue['month'] }}</td>
+      <td>{{ month_revenue['totalrevenue'] }}</td>
+      <td>{{ month_revenue['itemcount'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div width="400" height="400">
+    <canvas id="revenueChart"></canvas>
+  </div>
 </main>
+<script>
+  const labels = {{ labels | tojson }}
+  const total_revenues = {{ total_revenues | tojson }}
+</script>
 {% endblock %}
