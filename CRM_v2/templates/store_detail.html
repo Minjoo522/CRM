@@ -32,5 +32,22 @@
     </tr>
     {% endfor %}
   </table>
+  <table>
+    <caption class="table__caption">
+      단골 고객
+    </caption>
+    <tr>
+      <th align="left">id</th>
+      <th align="left">name</th>
+      <th align="left">frequency</th>
+    </tr>
+    {% for frequent_user in frequent_users %}
+    <tr class="table__item">
+      <td>{{ frequent_user['Id'] }}</td>
+      <td>{{ frequent_user['Name'] }}</td>
+      <td>{{ frequent_user['frequency'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </main>
 {% endblock %}

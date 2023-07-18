@@ -22,3 +22,14 @@ class Store(DataFetcher):
                     GROUP BY month
                 """
         return self.fetch_multiple_data(query)
+    
+    def get_frequent_user(self, id):
+        query = f"""
+                    SELECT U.Id, U.Name, COUNT(*) AS "frequency"
+                    FROM orders O JOIN user U
+                    ON O.UserId = U.Id
+                    WHERE O.StoreID = "{id}"
+                    GROUP BY U.Id
+                    ORDER BY frequency DESC LIMIT 10
+                """
+        return self.fetch_multiple_data(query)

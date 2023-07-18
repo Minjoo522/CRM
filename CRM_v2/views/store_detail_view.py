@@ -8,4 +8,5 @@ def store_detail(selected_id):
     db = Store()
     store = db.search_by_id('store', selected_id)
     month_revenues = db.get_month_revenue(selected_id)
-    return render_template("store_detail.html", store = store, month_revenues = month_revenues)
+    frequent_users = db.get_frequent_user(selected_id)
+    return render_template("store_detail.html", store = store, month_revenues = month_revenues, frequent_users = frequent_users)

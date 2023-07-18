@@ -49,3 +49,4 @@ class User(DataFetcher):
                 LIMIT 5
                 """
         return self.fetch_multiple_data(query)
+    
