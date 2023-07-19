@@ -1,20 +1,20 @@
-{% extends "kiosk/kiosk_layout.html" %} {% block content %}{{ super() }}
+{% extends "components/layout.html" %} {% block content %}
 <main class="login__main">
   <h2 class="login__title">새로운 주문을 위해서 로그인을 해주세요</h2>
   {% if error %}
   <p class="login__error">{{ error }}</p>
   {% endif %}
-  <form class="login__forms" action="/login" method="post">
+  <form class="login__forms" action="/user_login" method="post">
     <div class="login__form">
-      <input class="login__input" type="id" name="id" maxlength="10" required />
-      <label class="login__label" for="id">아이디</label>
+      <input class="login__input" type="id" name="user-login-id" maxlength="10" required />
+      <label class="login__label" for="user-login-id">아이디</label>
     </div>
     <div class="login__form">
-      <input class="login__input" type="password" name="password" required />
-      <label class="login__label" for="password">비밀번호</label>
+      <input class="login__input" type="password" name="user-login-password" required />
+      <label class="login__label" for="user-login-password">비밀번호</label>
     </div>
     <button class="login__button" type="submit">로그인</button>
   </form>
-  <!-- 뒤로 돌아가기 -->
+  <!-- 뒤로 돌아가는 버튼 만들기! -->
 </main>
 {% endblock %}

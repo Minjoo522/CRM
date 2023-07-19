@@ -5,9 +5,15 @@ class DataFetcher(DbController):
     def __init__(self):
         super().__init__()
 
+    def fetch_one_data(self, query, row=None):
+        self.connect_to_row()
+        self.execute_query(query, row)
+        result = self.fetch_one()
+        self.close_connection()
+        return result
+    
     def fetch_multiple_data(self, query):
         self.connect_to_row()
-        query = query
         self.execute_query(query)
         result = self.fetch_all()
         self.close_connection()
@@ -52,7 +58,7 @@ class DataFetcher(DbController):
         return result
     
     def get_distinct(self, data_type, column):
-        self.connect()
+        self.connect_to_row()
         query = f"SELECT DISTINCT {column} FROM {data_type}"
         self.execute_query(query)
         result = self.fetch_all()
