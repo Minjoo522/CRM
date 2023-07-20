@@ -19,6 +19,6 @@ def login():
         hash_password = login_user_data['LoginPassword']
         if login_user_data and check_password_hash(hash_password, password):
             return redirect(url_for('users.users'))
-        error = '존재하지 않는 회원입니다.'
+        error = '아이디와 비밀번호를 확인해주세요.'
 
     return render_template("auth/login.html", error = error)

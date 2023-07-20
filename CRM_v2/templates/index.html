@@ -11,6 +11,6 @@
       <button name="nonuser" value="nonuser"><a href="{{ url_for('select_store.select_store') }}">비회원</a></button>
     </form>
   </div>
-  <a href="#">회원가입하기</a>
+  <a href="{{ url_for('user_signup.user_signup') }}">회원가입하기</a>
 </main>
 {% endblock %}

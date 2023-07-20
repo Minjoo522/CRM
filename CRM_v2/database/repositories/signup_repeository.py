@@ -15,3 +15,12 @@ class Signup(DataFetcher):
                 """
         row = (f"{id}", f"{password}")
         return self.insert_data(query, row)
+    
+    def insert_user_signup_data(self, id, name, gender, birthdate, age, address, loginid, loginpassword):
+        query = f"""
+                INSERT INTO user
+                (Id, Name, Gender, Birthdate, Age, Address, LoginId, LoginPassword)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """
+        row = (id, name, gender, birthdate, age, address, loginid, loginpassword)
+        return self.insert_data(query, row)
