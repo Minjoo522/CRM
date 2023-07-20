@@ -1,5 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 
 # db
 from database.repositories.login_repository import Login
