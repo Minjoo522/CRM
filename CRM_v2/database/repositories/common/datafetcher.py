@@ -70,3 +70,8 @@ class DataFetcher(DbController):
         search_data = self.get_page_item(data_type, page, query, row)
         total_pages = self.get_total_pages(data_type, query, row)
         return search_data, total_pages
+    
+    def insert_data(self, query, row):
+        self.connect()
+        self.execute_query(query, row)
+        self.commit()

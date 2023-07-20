@@ -25,6 +25,9 @@ class DbController:
     
     def fetch_one(self):
         return self.cursor.fetchone()
+    
+    def commit(self):
+        return self.conn.commit()
 
     def close_connection(self):
         if self.cursor:

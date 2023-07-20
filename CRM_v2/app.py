@@ -26,10 +26,12 @@ app.register_blueprint(order_item_detail_view.bp)
 app.register_blueprint(index_view.bp)
 
 # kiosk view
-from views.kiosk import user_login_view, new_order_view
+from views.kiosk import user_login_view, new_order_view, user_signup_view, select_store_view
 
 app.register_blueprint(user_login_view.bp)
+app.register_blueprint(user_signup_view.bp)
 app.register_blueprint(new_order_view.bp)
+app.register_blueprint(select_store_view.bp)
 
 if __name__ == "__main__":
     app.run(debug=True, port="8080")

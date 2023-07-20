@@ -10,7 +10,7 @@ def index():
     nonuser = request.args.get('nonuser', default="", type=str)
     if nonuser == "nonuser":
         nonuser_uuid = uuid.uuid4()
-        return redirect(url_for('new_order.new_order', nonuser_uuid = nonuser_uuid))
+        return redirect(url_for('select_store.select_store', nonuser_uuid = nonuser_uuid))
 
     if 'id' in session:
         return redirect(url_for('users.users'))

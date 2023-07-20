@@ -18,7 +18,7 @@ def user_login():
 
         login_user_data = db.get_login_user_data('user', id_, hash_password)
         if login_user_data:
-            return redirect(url_for('new_order.new_order', user_uuid = login_user_data['Id']))
+            return redirect(url_for('select_store.select_store', user_uuid = login_user_data['Id']))
         error = '존재하지 않는 회원입니다.'
 
     return render_template("auth/user_login.html", error = error)
