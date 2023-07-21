@@ -1,0 +1,36 @@
+.select-store__main {
+  background-color: var(--color-accent-variant);
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.select-store__title {
+  color: var(--color-accent);
+  font-size: 50px;
+}
+
+.store-select__wrap {
+  width: 80%;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.store-select__buttons {
+  width: 100%;
+}
+
+.store-select__button {
+  background-color: var(--color-primary);
+  font-size: 20px;
+  width: 15rem;
+  height: 8rem;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}

@@ -1,12 +1,15 @@
 {% extends "components/layout.html" %} {% block content %}
-<main>
-  <h2>매장을 선택해주세요</h2>
-  <form method="get">
-    {% for store in stores %}
-    <button name="{{ store['Id'] }}">{{ store['Name'] }}</button>
-    {% endfor %}
-  </form>
-  <div>{{ selected_store }}을 선택하셨습니다</div>
+<main class="select-store__main">
+  <h2 class="select-store__title">매장을 선택해주세요</h2>
+
+  <div class="store-select__wrap">
+    <form class="store-select__buttons" method="get">
+      {% for store in stores %}
+      <button class="store-select__button" name="selected_store" value="{{ store['Id'] }}">{{ store['Name'] }}</button>
+      {% endfor %}
+    </form>
+  </div>
+  <div>{{ selected_store_name['Name'] }}을 선택하셨습니다</div>
   <a href="#">다음</a>
 </main>
 {% endblock %}

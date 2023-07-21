@@ -16,6 +16,7 @@
 @import 'screens/user.css';
 @import 'screens/login.css';
 @import 'screens/signup.css';
+@import 'screens/select_store.css';
 
 * {
   box-sizing: border-box;
