@@ -1,23 +1,25 @@
 {% extends "components/layout.html" %} {% block content %}
-<main>
-  <h2>메뉴를 선택해주세요</h2>
+<main class="select__main">
+  <h2 class="select__title">메뉴를 선택해주세요</h2>
   <!-- 여러개 선택 할 수 있게 만들어야 함 -->
-  <!-- <form method="get"> -->
-  {% for item in items %}
-  <button name="{{ item['Id'] }}">
-    <div>{{ item['Name'] }}</div>
-    <div>{{ item['UnitPrice'] }}</div>
-  </button>
-  {% endfor %}
-  <!-- </form> -->
+  <div class="select__wrap">
+    <form class="select__buttons" method="get">
+      {% for item in items %}
+      <button class="select__button" name="{{ item['Id'] }}">
+        <div>{{ item['Name'] }}</div>
+        <div>{{ item['UnitPrice'] }}원</div>
+      </button>
+      {% endfor %}
+    </form>
+  </div>
   <aside>
-    <!-- 삭제도 가능하게 -> 쿠키에 잠깐 넣어뒀다 삭제해야하나... -->
+    <!-- 삭제도 가능하게 -->
     <!-- <div>
       <div>{{ selected_item }}</div>
       <div>{{ selected_item }}</div>
       <div>{{ selected_item }}</div>
     </div> -->
-    <!-- 결제하기 누르면 결제 완료 팝업 후, 제일 첫 페이지로 -->
+    <!-- 결제하기 누르면 결제 완료 모달 팝업, 5초 후 제일 첫 페이지로 -->
     <a href="#">결제하기</a>
   </aside>
 </main>

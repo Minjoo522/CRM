@@ -9,6 +9,7 @@ def stores():
 
     page = request.args.get('page', default=1, type=int)
     search_store_name = request.args.get('store-name', default="", type=str)
+    user_uuid = request.args.get('user_uuid')
 
     keywords = ""
     keywords += "&store-name=" + search_store_name
@@ -19,4 +20,4 @@ def stores():
         total_pages = db.get_total_pages('store')
         page_data = db.get_page_item('store', page)
 
-    return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_store_name = search_store_name)
+    return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_store_name = search_store_name, user_uuid = user_uuid)

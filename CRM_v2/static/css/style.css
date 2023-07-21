@@ -10,13 +10,13 @@
 @import 'components/form.css';
 @import 'components/detail.css';
 @import 'components/map.css';
+@import 'components/kiosk.css';
 
 /* Screens */
 @import 'screens/index.css';
 @import 'screens/user.css';
 @import 'screens/login.css';
 @import 'screens/signup.css';
-@import 'screens/select_store.css';
 
 * {
   box-sizing: border-box;

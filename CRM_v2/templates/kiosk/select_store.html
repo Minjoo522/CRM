@@ -1,15 +1,15 @@
 {% extends "components/layout.html" %} {% block content %}
-<main class="select-store__main">
-  <h2 class="select-store__title">매장을 선택해주세요</h2>
+<main class="select__main">
+  <h2 class="select__title">매장을 선택해주세요</h2>
 
-  <div class="store-select__wrap">
-    <form class="store-select__buttons" method="get">
+  <div class="select__wrap">
+    <form class="select__buttons--overflow" method="get">
       {% for store in stores %}
-      <button class="store-select__button" name="selected_store" value="{{ store['Id'] }}">{{ store['Name'] }}</button>
+      <button class="select__button" name="selected_store" value="{{ store['Id'] }}">{{ store['Name'] }}</button>
       {% endfor %}
     </form>
   </div>
-  <div>{{ selected_store_name['Name'] }}을 선택하셨습니다</div>
-  <a href="#">다음</a>
+  <div>{{ selected_store_info['Name'] }}을 선택하셨습니다</div>
+  <a href="{{ url_for('new_order.new_order', user_uuid = user_uuid, store_uuid = selected_store_info['Id']) }}">다음</a>
 </main>
 {% endblock %}

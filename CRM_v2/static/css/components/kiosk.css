@@ -1,4 +1,4 @@
-.select-store__main {
+.select__main {
   background-color: var(--color-accent-variant);
   margin: 2rem;
   padding: 2rem;
@@ -9,24 +9,25 @@
   gap: 2rem;
 }
 
-.select-store__title {
+.select__title {
   color: var(--color-accent);
   font-size: 50px;
 }
 
-.store-select__wrap {
+.select__wrap {
   width: 80%;
+}
+
+.select__buttons {
   text-align: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
-.store-select__buttons {
-  width: 100%;
+.select__buttons--overflow {
+  height: 500px;
+  overflow: auto;
 }
 
-.store-select__button {
+.select__button {
   background-color: var(--color-primary);
   font-size: 20px;
   width: 15rem;
