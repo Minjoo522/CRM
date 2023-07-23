@@ -11,8 +11,11 @@ def item_detail(selected_id):
 
     labels = []
     total_revenues = []
+    itemcount = []
     for month_revenue in month_revenues:
         labels.append(month_revenue['month'])
         total_revenues.append(month_revenue['totalrevenue'])
+        itemcount.append(month_revenue['itemcount'])
 
-    return render_template("item_detail.html", item = item, month_revenues = month_revenues, labels = labels, total_revenues = total_revenues)
+
+    return render_template("item_detail.html", item = item, month_revenues = month_revenues, labels = labels, total_revenues = total_revenues, itemcount = itemcount)

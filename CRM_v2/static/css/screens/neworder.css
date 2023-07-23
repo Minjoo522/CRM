@@ -1,0 +1,8 @@
+.new_order__main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected-items__wrap {
+  width: 200px;
+}

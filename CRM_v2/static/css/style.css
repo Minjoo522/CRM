@@ -17,6 +17,7 @@
 @import 'screens/user.css';
 @import 'screens/login.css';
 @import 'screens/signup.css';
+@import 'screens/neworder.css';
 
 * {
   box-sizing: border-box;

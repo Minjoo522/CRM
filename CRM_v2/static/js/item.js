@@ -2,7 +2,7 @@ const ctx = document.getElementById('revenueChart').getContext('2d');
 
 function revenueChart() {
   new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: labels,
       datasets: [
@@ -38,13 +38,30 @@ function revenueChart() {
             'rgba(255, 159, 64, 1)',
           ],
           borderWidth: 1,
+          yAxisID: 'y1',
+          type: 'bar',
+        },
+        {
+          label: 'Item count',
+          data: count,
+          backgroundColor: 'rgba(255, 223, 0, 0.2)',
+          borderColor: 'rgba(255, 223, 0, 1)',
+          borderWidth: 2,
+          yAxisID: 'y2',
         },
       ],
     },
     options: {
       scales: {
-        y: {
+        y1: {
           beginAtZero: true,
+          position: 'right',
+          ticks: {
+            stepsize: 1,
+          },
+        },
+        y2: {
+          position: 'left',
         },
       },
     },

@@ -7,9 +7,6 @@
   <h3>새로운 주문을 위해서 회원 여부를 확인해주세요</h3>
   <div>
     <button><a href="{{ url_for('user_login.user_login') }}">회원</a></button>
-    <form method="get">
-      <button name="nonuser" value="nonuser"><a href="{{ url_for('select_store.select_store') }}">비회원</a></button>
-    </form>
   </div>
   <a href="{{ url_for('user_signup.user_signup') }}">회원가입하기</a>
 </main>

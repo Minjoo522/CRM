@@ -1,5 +1,5 @@
 {% extends "components/layout.html" %} {% block content %} {{ super() }}
-<main class="main">
+<main class="main store_main">
   <!-- Stores Search Form -->
   <form method="get" class="form">
     <div>
@@ -24,5 +24,10 @@
     {% endfor %}
   </table>
   {% include "components/pagination.html" %}
+  <!-- Map -->
+  <div id="map"></div>
 </main>
+<script>
+  const store_cities = {{ cities|tojson }}
+</script>
 {% endblock %}

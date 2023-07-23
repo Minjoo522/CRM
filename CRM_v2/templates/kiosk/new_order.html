@@ -12,15 +12,23 @@
       {% endfor %}
     </form>
   </div>
-  <aside>
-    <!-- 삭제도 가능하게 -->
-    <!-- <div>
-      <div>{{ selected_item }}</div>
-      <div>{{ selected_item }}</div>
-      <div>{{ selected_item }}</div>
-    </div> -->
+  <div class="selected-items__wrap">
+    <div class="selected-items">
+      <div class="selected-item">
+        <div class="selected-item__delete"></div>
+        <button class="selected-item__minus"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="selected-item__quantity"></div>
+        <button class="selected-item__plus"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <!-- 총 금액 -->
+    <div class="selected-item__amount">50000원</div>
+    <!-- 선택한 아이템 -> 쿠키 저장 -->
     <!-- 결제하기 누르면 결제 완료 모달 팝업, 5초 후 제일 첫 페이지로 -->
-    <a href="#">결제하기</a>
-  </aside>
+    <a class="payment__button" href="#">결제하기</a>
+  </div>
 </main>
+<script>
+  // jinja로 json 파일 보내주기
+</script>
 {% endblock %}

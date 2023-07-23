@@ -33,3 +33,7 @@ class Store(DataFetcher):
                     ORDER BY frequency DESC LIMIT 10
                 """
         return self.fetch_multiple_data(query)
+    
+    def get_addresses(self):
+        query = "SELECT Address FROM store"
+        return self.fetch_multiple_data(query)
