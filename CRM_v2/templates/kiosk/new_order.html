@@ -3,9 +3,9 @@
   <h2 class="select__title">메뉴를 선택해주세요</h2>
   <!-- 여러개 선택 할 수 있게 만들어야 함 -->
   <div class="select__wrap">
-    <form class="select__buttons" method="get">
+    <form class="select__buttons" action="" method="post">
       {% for item in items %}
-      <button class="select__button" name="{{ item['Id'] }}">
+      <button class="select__button" name="selected_item" value='{{ dict(item) | tojson | replace("'", '"') }}'>
         <div>{{ item['Name'] }}</div>
         <div>{{ item['UnitPrice'] }}원</div>
       </button>
@@ -14,21 +14,13 @@
   </div>
   <div class="selected-items__wrap">
     <div class="selected-items">
-      <div class="selected-item">
-        <div class="selected-item__delete"></div>
-        <button class="selected-item__minus"><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="selected-item__quantity"></div>
-        <button class="selected-item__plus"><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
     </div>
-    <!-- 총 금액 -->
-    <div class="selected-item__amount">50000원</div>
-    <!-- 선택한 아이템 -> 쿠키 저장 -->
-    <!-- 결제하기 누르면 결제 완료 모달 팝업, 5초 후 제일 첫 페이지로 -->
-    <a class="payment__button" href="#">결제하기</a>
+    <button class="payment__button" href="#">결제하기</ㅠ>
+  </div>
+
+  <div class="payment__modal">
+    <span>결제가 완료 되었습니다.</span>
+    <span class="countdown"></span><span>초 뒤 홈으로 돌아갑니다.</span>
   </div>
 </main>
-<script>
-  // jinja로 json 파일 보내주기
-</script>
 {% endblock %}
