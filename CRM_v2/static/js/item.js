@@ -44,8 +44,8 @@ function revenueChart() {
         {
           label: 'Item count',
           data: count,
-          backgroundColor: 'rgba(255, 223, 0, 0.2)',
-          borderColor: 'rgba(255, 223, 0, 1)',
+          backgroundColor: 'rgba(255, 166, 158, 0.2)',
+          borderColor: 'rgba(255, 166, 158, 1)',
           borderWidth: 2,
           yAxisID: 'y2',
         },
