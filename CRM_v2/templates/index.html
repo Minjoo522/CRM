@@ -1,13 +1,10 @@
 {% extends "components/layout.html" %} {% block content %}
-<header class="index__header">
-  <h1>Minjoo's Cafe</h1>
-  <a href="{{ url_for('login.login') }}">관리자 페이지</a>
-</header>
-<main>
-  <h3>새로운 주문을 위해서 회원 여부를 확인해주세요</h3>
-  <div>
-    <button><a href="{{ url_for('user_login.user_login') }}">회원</a></button>
-  </div>
-  <a href="{{ url_for('user_signup.user_signup') }}">회원가입하기</a>
-</main>
+<div class="index__contents">
+  <h1 class="index__title">Minjoo's Cafe</h1>
+  <main class="index__main">
+    <a class="index__button" href="{{ url_for('login.login') }}">관리자 페이지</a>
+    <a class="index__button" href="{{ url_for('user_login.user_login') }}">키오스크</a>
+    <a class="index__button" href="{{ url_for('user_signup.user_signup') }}">회원가입하기</a>
+  </main>
+</div>
 {% endblock %}

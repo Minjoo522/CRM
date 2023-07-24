@@ -2,10 +2,10 @@
 <main class="select__main">
   <h2 class="select__title">매장을 선택해주세요</h2>
 
-  <div class="select__wrap">
-    <form class="select__buttons--overflow" method="get">
+  <div class="select-store__wrap">
+    <form class="select-store__buttons--overflow" method="get">
       {% for store in stores %}
-      <button class="select__button" name="selected_store" value="{{ store['Id'] }}">{{ store['Name'] }}</button>
+      <button class="select-store__button" name="selected_store" value="{{ store['Id'] }}">{{ store['Name'] }}</button>
       {% endfor %}
     </form>
   </div>

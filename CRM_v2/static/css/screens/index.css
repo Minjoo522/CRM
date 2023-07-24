@@ -1,4 +1,37 @@
-.index__header {
+.index__contents {
+  background-color: var(--color-accent-variant);
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.index__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.index__title {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.index__button {
+  background-color: var(--color-primary);
+  width: 300px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }

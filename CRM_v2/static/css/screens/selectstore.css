@@ -1,0 +1,17 @@
+.select-store__wrap {
+  width: 80%;
+}
+
+.select-store__buttons--overflow {
+  height: 500px;
+  overflow: auto;
+}
+
+.select-store__button {
+  background-color: var(--color-primary);
+  font-size: 20px;
+  width: 15rem;
+  height: 8rem;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
