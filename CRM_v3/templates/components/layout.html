@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/76dd16220c.js" crossorigin="anonymous"></script>
+    <!-- leafletjs -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <!-- JavaScript -->
+    <script type="module" src="{{ url_for('static', filename='js/main.js')}}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/item.js')}}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/kiosk.js')}}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/map.js')}}" defer></script>
+    <title>Customer Management System</title>
+  </head>
+  <body>
+    {% block content %}
+    <header class="header">{% include "components/header.html" %} {% include "components/navbar.html" %}</header>
+    {% endblock %}
+  </body>
+</html>

@@ -13,6 +13,7 @@ def new_order(user_uuid, store_uuid):
     item_db = Item()
     new_order_db = NewOrder()
     items = item_db.get_distinct('item', '*')
+    # try-except 고치기
     if request.method == 'POST':
         try: 
             ordered_items = request.get_json()

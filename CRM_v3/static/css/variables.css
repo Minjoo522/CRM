@@ -1,0 +1,15 @@
+:root {
+  /* App Colors */
+  --color-primary: var(--color-blue);
+  --color-primary-variant: var(--color-mint);
+  --color-accent: var(--color-pink);
+  --color-accent-variant: var(--color-beige);
+  --color-text: var(--color-black);
+
+  /* Colors */
+  --color-blue: #aed9e0;
+  --color-mint: #b8f2e6;
+  --color-pink: #ffa69e;
+  --color-beige: #faf3dd;
+  --color-black: #000000;
+}

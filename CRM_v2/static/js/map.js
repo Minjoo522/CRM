@@ -25,6 +25,7 @@ const cities = {
   중구: [[37.57, 127.02], 0],
   중랑구: [[37.6, 127.09], 0],
 };
+// TODO: 딕셔너리로
 
 for (const store_city of store_cities) {
   if (cities.hasOwnProperty(store_city)) {
@@ -35,7 +36,7 @@ for (const store_city of store_cities) {
 const map = L.map('map').setView([37.55, 126.98], 11.5);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 for (let key in cities) {

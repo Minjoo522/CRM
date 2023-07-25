@@ -24,6 +24,7 @@ def stores():
     cities = []
     for address in addresses:
         full_address = address['Address'].split()
+        # 구 정보만 split
         cities.append(full_address[1])
 
     return render_template("stores.html", stores = page_data, total_pages = total_pages, current_page = page, keywords = keywords, search_store_name = search_store_name, user_uuid = user_uuid, cities = cities)

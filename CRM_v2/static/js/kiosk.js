@@ -33,10 +33,12 @@ function printSelectedItem(newItem) {
   const selectedDiv = document.createElement('div');
   selectedDiv.classList.add('selected-item');
   selectedDiv.id = newItem.id;
+
   const deleteButton = document.createElement('button');
   deleteButton.innerText = '❌';
   deleteButton.addEventListener('click', deleteItem);
   selectedDiv.appendChild(deleteButton);
+
   const itemNameSpan = document.createElement('span');
   const parsedItemValue = JSON.parse(newItem.value);
   itemNameSpan.innerText = parsedItemValue.Name;
@@ -44,6 +46,7 @@ function printSelectedItem(newItem) {
   selectedItemWrap.appendChild(selectedDiv);
 }
 
+// TODO: url 파싱하지 않고 백에서 url을 보내줄 수는 없을까?
 const currentURL = window.location.href;
 const splitURL = currentURL.split('/');
 

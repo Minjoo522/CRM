@@ -1,0 +1,73 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@import 'variables.css';
+
+/* Components */
+@import 'components/header.css';
+@import 'components/table.css';
+@import 'components/pagination.css';
+@import 'components/form.css';
+@import 'components/detail.css';
+@import 'components/map.css';
+@import 'components/kiosk.css';
+@import 'components/modal.css';
+
+/* Screens */
+@import 'screens/index.css';
+@import 'screens/login.css';
+@import 'screens/signup.css';
+@import 'screens/neworder.css';
+@import 'screens/selectstore.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  border: none;
+}
+
+select {
+  appearance: none;
+}
+
+.main {
+  margin-top: 160px;
+  margin-bottom: 50px;
+  padding: 0 2rem;
+}

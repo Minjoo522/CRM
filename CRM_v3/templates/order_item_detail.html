@@ -1,0 +1,24 @@
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main class="main">
+  <table>
+    <caption class="table__caption">
+      상품 주문 정보
+    </caption>
+    <tr>
+      <th align="left">id</th>
+      <th align="left">order at</th>
+      <th align="left">store id</th>
+      <th align="left">item name</th>
+    </tr>
+    <tr class="table__item">
+      <td>{{ order_item['Id'] }}</td>
+      <td>{{ order_item['OrderAt'] }}</td>
+      <td>{{ order_item['ItemId'] }}</td>
+      <td>{{ order_item['Name'] }}</td>
+    </tr>
+  </table>
+  <div class="go-back">
+    <a href="javascript:history.back()">이전 페이지로 돌아가기</a>
+  </div>
+</main>
+{% endblock %}

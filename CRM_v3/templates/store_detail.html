@@ -1,0 +1,53 @@
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main class="main">
+  <table>
+    <caption class="table__caption">
+      매장 정보
+    </caption>
+    <tr>
+      <th align="left">name</th>
+      <th align="left">type</th>
+      <th align="left">address</th>
+    </tr>
+    <tr class="table__item">
+      <td>{{ store['Name'] }}</td>
+      <td>{{ store['Type'] }}</td>
+      <td>{{ store['Address'] }}</td>
+    </tr>
+  </table>
+  <table>
+    <caption class="table__caption">
+      월간 매출액
+    </caption>
+    <tr>
+      <th align="left">Month</th>
+      <th align="left">Revenue</th>
+      <th align="left">count</th>
+    </tr>
+    {% for month_revenue in month_revenues %}
+    <tr class="table__item">
+      <td>{{ month_revenue['month'] }}</td>
+      <td>{{ month_revenue['totalrevenue'] }}</td>
+      <td>{{ month_revenue['itemcount'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <table>
+    <caption class="table__caption">
+      단골 고객
+    </caption>
+    <tr>
+      <th align="left">id</th>
+      <th align="left">name</th>
+      <th align="left">frequency</th>
+    </tr>
+    {% for frequent_user in frequent_users %}
+    <tr class="table__item">
+      <td><a href="/user_detail/{{ frequent_user['Id'] }}/">{{ frequent_user['Id'] }}</a></td>
+      <td>{{ frequent_user['Name'] }}</td>
+      <td>{{ frequent_user['frequency'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</main>
+{% endblock %}

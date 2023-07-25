@@ -5,8 +5,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 # views
-from views import items_view, login_view, logout_view,\
-                    signup_view, users_view, user_detail_view, stores_view,\
+from views import items_view, login_view, logout_view, signup_view, users_view, user_detail_view, stores_view,\
                     store_detail_view, item_detail_view, orders_view, order_detail_view,order_items_view,\
                     order_item_detail_view, index_view
 

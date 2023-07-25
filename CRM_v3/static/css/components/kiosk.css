@@ -1,0 +1,33 @@
+.select__main {
+  background-color: var(--color-accent-variant);
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.select__title {
+  color: var(--color-accent);
+  font-size: 50px;
+}
+
+.select__wrap {
+  width: 80%;
+}
+
+.select__buttons--overflow {
+  height: 500px;
+  overflow: auto;
+}
+
+.select__button {
+  background-color: var(--color-primary);
+  font-size: 20px;
+  width: 15rem;
+  height: 8rem;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}

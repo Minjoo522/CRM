@@ -52,6 +52,7 @@ class DataFetcher(DbController):
             query = f"SELECT COUNT(*) FROM {data_type}"
             self.execute_query(query)
 
+        # 튜플로 반환되기 때문에 인덱싱 처리
         count = int(self.fetch_one()[0])
         result = count // self.__PER_PAGE + (count % self.__PER_PAGE > 0)
         self.close_connection()

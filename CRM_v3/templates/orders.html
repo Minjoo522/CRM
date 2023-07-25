@@ -1,0 +1,23 @@
+{% extends "components/layout.html" %} {% block content %} {{ super() }}
+<main class="main">
+  <table>
+    <tr>
+      <th align="left">id</th>
+      <th align="left">order_at</th>
+      <th align="left">store_id</th>
+      <th align="left">user_id</th>
+    </tr>
+    {% for order in orders %}
+    <tr class="table__item hover">
+      <td>
+        <a class="table__item id" href="/order_item_detail/{{ order['Id'] }}">{{ order['Id'] }}</a>
+      </td>
+      <td>{{ order['OrderAt'] }}</td>
+      <td><a href="/store_detail/{{ order['StoreId'] }}">{{ order['StoreId'] }}</a></td>
+      <td><a href="/user_detail/{{ order['UserId'] }}">{{ order['UserId'] }}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% include "components/pagination.html" %}
+</main>
+{% endblock %}

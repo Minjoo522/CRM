@@ -1,0 +1,10 @@
+{% extends "components/layout.html" %} {% block content %}
+<div class="index__contents">
+  <h1 class="index__title">Minjoo's Cafe</h1>
+  <main class="index__main">
+    <a class="index__button" href="{{ url_for('login.login') }}">관리자 페이지</a>
+    <a class="index__button" href="{{ url_for('user_login.user_login') }}">키오스크</a>
+    <a class="index__button" href="{{ url_for('user_signup.user_signup') }}">회원가입하기</a>
+  </main>
+</div>
+{% endblock %}
