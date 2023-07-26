@@ -1,8 +1,13 @@
 import os
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///crm.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
 
 # views
 from views import items_view, login_view, logout_view, signup_view, users_view, user_detail_view, stores_view,\
@@ -33,4 +38,4 @@ app.register_blueprint(new_order_view.bp)
 app.register_blueprint(select_store_view.bp)
 
 if __name__ == "__main__":
-    app.run(debug=True, port="8080")
+    app.run()

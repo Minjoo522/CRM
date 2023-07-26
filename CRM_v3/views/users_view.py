@@ -1,6 +1,8 @@
 from flask import Blueprint, request, render_template
 from database.repositories.user_repository import User
 
+from model.models import UserDb
+
 bp = Blueprint('users', __name__)
 
 @bp.route('/users/')
