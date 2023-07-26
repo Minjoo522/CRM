@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template
 from database.repositories.item_repository import ItemDb
 
-from model.models import Item
+from models import Item
 
 
 bp = Blueprint('items', __name__)

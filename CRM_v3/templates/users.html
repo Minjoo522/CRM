@@ -25,11 +25,11 @@
       <th>Birthdate</th>
     </tr>
     {% for user in users %}
-    <tr class="table__item hover" onclick="location.href='/user_detail/{{ user.Id }}'">
-      <td align="center">{{ user['Name'] }}</td>
-      <td align="center">{{ user['Gender'] }}</td>
-      <td align="center">{{ user['Age'] }}</td>
-      <td align="center">{{ user['Birthdate'] }}</td>
+    <tr class="table__item hover" onclick="location.href='/user_detail/{{ user.id }}'">
+      <td align="center">{{ user.name }}</td>
+      <td align="center">{{ user.gender }}</td>
+      <td align="center">{{ user.age }}</td>
+      <td align="center">{{ user.birthdate }}</td>
     </tr>
     {% endfor %}
   </table>
