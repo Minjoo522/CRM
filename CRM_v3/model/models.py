@@ -36,3 +36,8 @@ class Item(db.Model):
     name = db.Column(db.String(32))
     type = db.Column(db.String(32))
     unitprice = db.Column(db.Integer())
+
+class Admin(db.Model):
+    __tablename__ = 'admin'
+    loginid = db.Column(db.String(64), primary_key = True)
+    loginpassword = db.Column(db.String(64))
