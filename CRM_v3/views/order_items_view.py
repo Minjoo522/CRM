@@ -1,12 +1,13 @@
 from flask import Blueprint, request, render_template
-from database.repositories.order_item_repository import OrderItem
+from database.repositories.order_item_repository import OrderItemDb
 
+from model.models import OrderItem
 
 bp = Blueprint('order_items', __name__)
 
 @bp.route('/order_items/')
 def order_items():
-    db = OrderItem()
+    db = OrderItemDb()
 
     page = request.args.get('page', default=1, type=int)
 

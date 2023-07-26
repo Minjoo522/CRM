@@ -24,3 +24,9 @@ class Orders(db.Model):
     orderat = db.Column(db.String(32))
     storeid = db.Column(db.String(64))
     userid = db.Column(db.String(64))
+
+class OrderItem(db.Model):
+    __tablename__ = 'orderitem'
+    id = db.Column(db.String(64), primary_key = True)
+    orderid = db.Column(db.String(64))
+    itemid = db.Column(db.String(64))

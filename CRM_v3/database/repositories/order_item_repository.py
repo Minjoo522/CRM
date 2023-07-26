@@ -1,6 +1,6 @@
 from database.repositories.common.datafetcher import DataFetcher
 
-class OrderItem(DataFetcher):
+class OrderItemDb(DataFetcher):
     def __init__(self):
         super().__init__()
 
