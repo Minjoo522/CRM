@@ -17,3 +17,10 @@ class Store(db.Model):
     name = db.Column(db.String(32))
     type = db.Column(db.String(16))
     address = db.Column(db.String(64))
+
+class Orders(db.Model):
+    __tablename__ = 'orders'
+    id = db.Column(db.String(64), primary_key = True)
+    orderat = db.Column(db.String(32))
+    storeid = db.Column(db.String(64))
+    userid = db.Column(db.String(64))
