@@ -1,12 +1,14 @@
 from flask import Blueprint, request, render_template
-from database.repositories.item_repository import Item
+from database.repositories.item_repository import ItemDb
+
+from model.models import Item
 
 
 bp = Blueprint('items', __name__)
 
 @bp.route('/items/')
 def items():
-    db = Item()
+    db = ItemDb()
 
     page = request.args.get('page', default=1, type=int)
     search_type = request.args.get('type', default="", type=str)

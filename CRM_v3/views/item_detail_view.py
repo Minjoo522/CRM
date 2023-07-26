@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template
-from database.repositories.item_repository import Item
+from database.repositories.item_repository import ItemDb
 
 bp = Blueprint('item_detail', __name__)
 
 @bp.route('/item_detail/<selected_id>/')
 def item_detail(selected_id):
-    db = Item()
+    db = ItemDb()
     item = db.search_by_id('item', selected_id)
     month_revenues = db.get_month_revenue(selected_id)
 

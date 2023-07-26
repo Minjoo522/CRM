@@ -29,4 +29,10 @@ class OrderItem(db.Model):
     __tablename__ = 'orderitem'
     id = db.Column(db.String(64), primary_key = True)
     orderid = db.Column(db.String(64))
-    itemid = db.Column(db.String(64))
+    
+class Item(db.Model):
+    __tablename__ = 'item'
+    id = db.Column(db.String(64), primary_key = True)
+    name = db.Column(db.String(32))
+    type = db.Column(db.String(32))
+    unitprice = db.Column(db.Integer())

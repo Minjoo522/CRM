@@ -3,14 +3,14 @@ import uuid
 from datetime import datetime
 
 # db
-from database.repositories.item_repository import Item
+from database.repositories.item_repository import ItemDb
 from database.repositories.new_order_repository import NewOrder
 
 bp = Blueprint('new_order', __name__)
 
 @bp.route('/new_order/<user_uuid>/<store_uuid>', methods=['GET', 'POST'])
 def new_order(user_uuid, store_uuid):
-    item_db = Item()
+    item_db = ItemDb()
     new_order_db = NewOrder()
     items = item_db.get_distinct('item', '*')
     # try-except 고치기
