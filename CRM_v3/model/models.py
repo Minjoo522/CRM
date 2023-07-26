@@ -1,8 +1,8 @@
 from app import db
 
-class UserDb(db.Model):
+class User(db.Model):
     __tablename__ = 'user'
-    id = db.Column(db.String(64), primary_key=True)
+    id = db.Column(db.String(64), primary_key = True)
     name = db.Column(db.String(16))
     gender = db.Column(db.String(16))
     birthdate = db.Column(db.String(32))
@@ -10,3 +10,10 @@ class UserDb(db.Model):
     address = db.Column(db.String(64))
     loginid = db.Column(db.String(64))
     loginpassword = db.Column(db.String(64))
+
+class Store(db.Model):
+    __tablename__ = 'store'
+    id = db.Column(db.String(64), primary_key = True)
+    name = db.Column(db.String(32))
+    type = db.Column(db.String(16))
+    address = db.Column(db.String(64))

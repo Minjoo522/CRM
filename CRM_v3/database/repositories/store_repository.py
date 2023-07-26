@@ -1,6 +1,6 @@
 from database.repositories.common.datafetcher import DataFetcher
 
-class Store(DataFetcher):
+class StoreDb(DataFetcher):
     def __init__(self):
         super().__init__()
 

@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template
-from database.repositories.user_repository import User
+from database.repositories.user_repository import UserDb
 
 bp = Blueprint('user_detail', __name__)
 
 @bp.route('/user_detail/<selected_id>/')
 def user_detail(selected_id):
-    db = User()
+    db = UserDb()
     user = db.search_by_id('user', selected_id)
     user_orders = db.user_orders(selected_id)
     top_visited_stores = db.find_top_visited_stores(selected_id)
