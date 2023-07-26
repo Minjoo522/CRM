@@ -15,11 +15,11 @@
       <th align="left">address</th>
     </tr>
     <tr class="table__item">
-      <td>{{ user['Name'] }}</td>
-      <td>{{ user['Gender'] }}</td>
-      <td>{{ user['Age'] }}</td>
-      <td>{{ user['Birthdate'] }}</td>
-      <td>{{ user['Address'] }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.birthdate }}</td>
+      <td>{{ user.address }}</td>
     </tr>
   </table>
   <table>
@@ -33,9 +33,9 @@
     </tr>
     {% for user_order in user_orders %}
     <tr class="table__item">
-      <td><a href="/order_item_detail/{{ user_order['Id'] }}/">{{ user_order['Id'] }}</a></td>
-      <td>{{ user_order['OrderAt'] }}</td>
-      <td><a href="/store_detail/{{ user_order['StoreId'] }}">{{ user_order['StoreId'] }}</a></td>
+      <td><a href="/order_item_detail/{{ user_order.id }}/">{{ user_order.id }}</a></td>
+      <td>{{ user_order.orderat }}</td>
+      <td><a href="/store_detail/{{ user_order.storeid }}">{{ user_order.storeid }}</a></td>
     </tr>
     {% endfor %}
   </table>

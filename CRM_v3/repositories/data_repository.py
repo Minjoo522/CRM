@@ -18,3 +18,6 @@ class DataRepository:
         
         result = count // self.__PER_PAGE + (count % self.__PER_PAGE > 0)
         return result
+    
+    def search_by_id(self, model, selected_id):
+        return model.query.filter_by(id = selected_id).first()

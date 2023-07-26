@@ -1,13 +1,13 @@
 from flask import Blueprint, request, render_template
 
 from models import User
-from repositories.data_repository import DataRepository
+from repositories.user_repository import UserRepository
 
 bp = Blueprint('users', __name__)
 
 @bp.route('/users/')
 def users():
-    data_repo = DataRepository()
+    data_repo = UserRepository()
 
     page = request.args.get('page', default=1, type=int)
     search_name = request.args.get('name', default="", type=str)
