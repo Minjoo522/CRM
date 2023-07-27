@@ -1,6 +1,5 @@
 from models import *
 from app import db
-from flask_sqlalchemy import SQLAlchemy
 from repositories.data_repository import DataRepository
 
 class UserRepository(DataRepository):

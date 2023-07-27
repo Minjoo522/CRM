@@ -3,7 +3,7 @@ from sqlalchemy import func
 class DataRepository:
     __PER_PAGE = 10
     def get_page_data(self, model, page, search=None):
-        offset = (page - 1) * 10
+        offset = (page - 1) * self.__PER_PAGE
         
         if search:
             return model.query.filter(*search).limit(self.__PER_PAGE).offset(offset).all()
