@@ -1,4 +1,5 @@
 from sqlalchemy import func
+from app import db
 
 class DataRepository:
     __PER_PAGE = 10
@@ -11,13 +12,15 @@ class DataRepository:
             return model.query.limit(self.__PER_PAGE).offset(offset).all()
         
     def get_total_pages(self, model, search=None):
+        query = db.session.query(func.count())
+
         if search:
-            count = model.query.with_entities(func.count()).filter(*search).scalar()
-        else:
-            count = model.query.with_entities(func.count()).scalar()
-        
-        result = count // self.__PER_PAGE + (count % self.__PER_PAGE > 0)
-        return result
+            query = query.filter(*search)
+
+        total_count = query.select_from(model).scalar()
+        total_pages = (total_count - 1) // self.__PER_PAGE + 1
+        print(total_count, total_pages, query)
+        return total_pages
     
     def search_by_id(self, model, selected_id):
         return model.query.filter_by(id = selected_id).first()
